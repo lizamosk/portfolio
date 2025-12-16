@@ -1,0 +1,12 @@
+import { createI18n } from 'vue-i18n'
+import en_GB from './copy/en_GB.json'
+
+export const setupLocale = (locale: string) => {
+  return createI18n({
+    locale,
+    fallbackLocale: 'en_GB',
+    messages: {
+      en_GB,
+    },
+  })
+}

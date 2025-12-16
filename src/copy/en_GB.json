@@ -1,0 +1,110 @@
+{
+  "navigation": {
+    "cv": "CV",
+    "contacts": "Contacts"
+  },
+  "intro": {
+    "greeting": "Hey! I'm Liza.",
+    "header": {
+      "role": "Frontend & UX Engineer",
+      "of_your": "of your",
+      "dreams": "dreams."
+    },
+    "contact_me": "Contact me",
+    "download_cv": "Download CV"
+  },
+  "work_experience": [
+    {
+      "company": "ZAVA",
+      "icon": "zava",
+      "timeline": "May 2024 - Present",
+      "description": "",
+      "points": [
+        "Led the development of several client-facing micro-frontends from conception to production, that serve over 1.3 million active customers per year",
+        "Collaborated with UI/UX designers and fellow frontend engineers to introduce and implement a new company-wide design system, significantly improving consistency, development velocity, and maintainability across multiple products",
+        "Engineered a modern document generation pipeline utilizing AWS Lambdas and Puppeteer, replacing an outdated system with a faster, more scalable, and technologically advanced solution",
+        "Developed and delivered a critical feature for the Operational team that directly addressed a key pain point, resulting in a quantifiable reduction of over 40 weekly alerts",
+        "Optimized website performance by implementing asset inlining strategies, analyzing bottlenecks and reducing overall site loading time by 30%, enhancing user experience",
+        "Proposed and implemented improvements to the code review process, streamlining workflows and increasing code review speed by 1-2 days, which accelerated feature delivery timelines"
+      ],
+      "role": "Frontend Engineer",
+      "technologies": [
+        "Vue3",
+        "TypeScript",
+        "micro-frontends",
+        "singleSPA",
+        "Jest",
+        "Cypress",
+        "Figma"
+      ]
+    },
+
+    {
+      "company": "STC Ltd.",
+      "icon": "stc",
+      "timeline": "Jun 2022 - Apr 2024",
+      "description": "",
+      "points": [
+        "Collaborated with UI/UX team and migrated to a new design, following a pixel-perfect practice and resulting in a modernized and cohesive user experience",
+        "Reduced loading times of the UI components by 30% through the utilization of hooks, virtual lists and lazy loading",
+        "Introduced server-side rendering and efficient resource usage, enhancing scalability and optimizing website content",
+        "Introduced the Web Workers in the project which increased the speed of business logic by 30-40%",
+        "Improved the company’s engineering culture by presentation at the internal meetups and code reviewing",
+        "Actively participated in groomings and knowledge-sharing among team members"
+      ],
+      "role": "Frontend Engineer",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Playwright",
+        "Redux",
+        "Webpack",
+        "Node.js",
+        "Neo4j",
+        "Material UI",
+        "Sass"
+      ]
+    },
+
+    {
+      "company": "Netcracker Technology",
+      "icon": "netcracker",
+      "timeline": "Sep 2021 - May 2022",
+      "description": "",
+      "points": [
+        "Increased code coverage with unit and integration tests from 20% to 60% reducing the number of errors",
+        "Developed an internal library for collecting statistics from Kubernetes and cluster management which increased\ncode reusability"
+      ],
+      "role": "Frontend Engineer",
+      "technologies": ["Golang", "Java", "Spring Framework", "PostgreSQL", "Docker"]
+    },
+
+    {
+      "company": "Saint Petersburg State Electrotechnical University \"LETI\"",
+      "icon": "leti",
+      "timeline": "Apr 2020 - Nov 2020",
+      "description": "",
+      "points": [
+        "Ensured a seamless experience across various devices by implementing responsive design principles, making the application accessible on desktops and mobile devices",
+        "Optimized image and fonts loading, improving site loading speed by up 20%",
+        "Implemented a library with dynamic UI components that adapt to various user roles"
+      ],
+      "role": "Frontend Engineer",
+      "technologies": ["React", "Redux", "TypeScript", "CSS", "Jest"]
+    }
+  ],
+  "education": [
+    {
+      "place": "St Petersburg’s Electrotechnical University “LETI”",
+      "dates": "2019-2023",
+      "title": "Bachelor in Software Engineering",
+      "image": "https://marketplace.canva.com/8-1Kc/MAGoQJ8-1Kc/1/tl/canva-ginger-cat-with-paws-raised-in-air-MAGoQJ8-1Kc.jpg"
+    },
+    {
+      "place": "Information Technologies, Mechanics and Optics University",
+      "dates": "2023-2024",
+      "title": "Qualification in UI/UX design",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/ginger-maine-coon-kitten-running-on-lawn-in-royalty-free-image-1719608142.jpg?crop=1xw:0.84415xh;0,0.185xh"
+    }
+  ]
+}

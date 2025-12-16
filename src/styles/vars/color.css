@@ -1,0 +1,17 @@
+:root {
+  --neutral-grey: #d8d8d8;
+  --neutral-base: #e8f1f2;
+  --neutral-base-darker: #cbd9db;
+  --primary-dark: #164e89;
+  --dust-blue: #587991;
+  --brand-blue: #3a7ca5;
+  --brand-blue-2: #206691;
+  --purple: #7147D7;
+  --sky-blue: #A1C6EA;
+  .has-text-brand-blue {
+    color: var(--brand-blue);
+  }
+  .has-background-brand-blue {
+    background: var(--brand-blue);
+  }
+}

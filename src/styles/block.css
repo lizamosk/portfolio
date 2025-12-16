@@ -1,0 +1,84 @@
+.NavBar {
+  background: inherit;
+  position: sticky;
+}
+
+a {
+  cursor: pointer;
+}
+
+.Page {
+  scroll-snap-align: start;
+  min-height: calc(100vh - 78px);
+  padding-bottom: 4rem;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.PersonalThings {
+  .PersonalThings__items {
+    p {
+      margin-bottom: var(--size-2);
+    }
+  }
+}
+
+@counter-style star-emoji {
+  system: cyclic;
+  symbols: ⭐;
+  suffix: ' ';
+}
+
+
+.AboutMe__content {
+  gap: 20px;
+  ul li {
+    list-style-type: star-emoji;
+  }
+}
+
+.bounce-out-down {
+  animation: bounce-out-down 2s ease-in-out infinite;
+}
+@keyframes bounce-out-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.Slides {
+  scrollbar-width: none;
+  .Slide__container {
+    &:not(:first-child):nth-child(n) {
+      transform: scale(calc(var(--n) * 0.75));
+      filter: blur(calc(var(--n) * 2px));
+    }
+    .Slide {
+      .Slide__image {
+        max-width: 300px;
+        @media (max-width: var(--tablet)) {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+}
+
+.ContactForm {
+  label {
+    display: flex;
+    flex-direction: column;
+    textarea {
+      resize: none;
+    }
+  }
+}

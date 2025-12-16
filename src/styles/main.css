@@ -1,0 +1,29 @@
+@import 'font.css';
+@import 'block.css';
+@import './vars/color.css'; /* Use the correct relative path */
+@import './vars/main.css';
+@import 'accordion.css';
+@import 'input.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  background: var(--neutral-grey);
+  font:
+          400 16px/150% 'Nunito Sans',
+          sans-serif;
+  color: var(--primary-dark);
+}
+
+#main-container {
+  height: calc(100dvh - 78px);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  overflow-anchor: none;
+  @media (min-width: var(--tablet)) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
