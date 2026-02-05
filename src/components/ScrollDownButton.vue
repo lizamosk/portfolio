@@ -1,6 +1,6 @@
-<script setup lang="ts">
-import ScrollDownButtonIcon from "@/assets/icons/scroll-down.svg";
-import {scrollToNextPage} from "@/util/scroll";
+<script lang="ts" setup>
+import ScrollDownButtonIcon from '@/assets/icons/scroll-down.svg'
+import { scrollToNextPage } from '@/util/scroll'
 </script>
 
 <template>
@@ -10,4 +10,3 @@ import {scrollToNextPage} from "@/util/scroll";
     </button>
   </div>
 </template>
-

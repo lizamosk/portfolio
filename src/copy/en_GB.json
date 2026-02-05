@@ -6,12 +6,28 @@
   "intro": {
     "greeting": "Hey! I'm Liza.",
     "header": {
-      "role": "Frontend & UX Engineer",
+      "role": "Frontend & ",
+      "role2": "UX Engineer",
       "of_your": "of your",
       "dreams": "dreams."
     },
     "contact_me": "Contact me",
     "download_cv": "Download CV"
+  },
+  "about_me": {
+    "header": "About me",
+    "personal": {
+      "header": "Something personal...",
+      "topics": [
+        "Valencia, Spain",
+        "Commercial experience since 2020",
+        "Diploma in Software Engineering & UI/UX",
+        "Book worm (absolute Murakami and Dostoevsky fan!)",
+        "Love art, paint and crocheting",
+        "Love art, paint and crocheting",
+        "Addicted to healthy lifestyle. Gym, cycling, no-sugar meals is something that I truly love!"
+      ]
+    }
   },
   "work_experience": [
     {
@@ -30,12 +46,15 @@
       "role": "Frontend Engineer",
       "technologies": [
         "Vue3",
+        "React",
         "TypeScript",
         "micro-frontends",
         "singleSPA",
-        "Jest",
         "Cypress",
-        "Figma"
+        "Jest",
+        "Figma",
+        "Sass",
+        "Vite"
       ]
     },
 
@@ -57,6 +76,7 @@
         "React",
         "TypeScript",
         "Playwright",
+        "Jest",
         "Redux",
         "Webpack",
         "Node.js",
@@ -98,13 +118,28 @@
       "place": "St Petersburg’s Electrotechnical University “LETI”",
       "dates": "2019-2023",
       "title": "Bachelor in Software Engineering",
-      "image": "https://marketplace.canva.com/8-1Kc/MAGoQJ8-1Kc/1/tl/canva-ginger-cat-with-paws-raised-in-air-MAGoQJ8-1Kc.jpg"
+      "image": "images/education/diploma_leti.jpg"
     },
     {
       "place": "Information Technologies, Mechanics and Optics University",
       "dates": "2023-2024",
       "title": "Qualification in UI/UX design",
-      "image": "https://hips.hearstapps.com/hmg-prod/images/ginger-maine-coon-kitten-running-on-lawn-in-royalty-free-image-1719608142.jpg?crop=1xw:0.84415xh;0,0.185xh"
+      "image": "images/education/ux_itmo.png"
+    },
+    {
+      "place": "Uxcel",
+      "dates": "2025",
+      "title": "Common Design Patterns",
+      "image": "images/education/design_patterns_uxcel.png"
+    },
+    {
+      "place": "Uxcel",
+      "dates": "2025",
+      "title": "UX Design Foundations",
+      "image": "images/education/ux_foundations_uxcel.png"
     }
-  ]
+  ],
+  "contact": {
+    "message_sent": "Amazing! Your message was sent."
+  }
 }
