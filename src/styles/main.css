@@ -13,7 +13,7 @@
 @tailwind utilities;
 
 body {
-    background: var(--neutral-grey);
+    /*background: var(--neutral-grey);*/
 }
 
 #app {
