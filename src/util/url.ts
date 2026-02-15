@@ -1,4 +1,9 @@
+const images = import.meta.glob('@/assets/**/*.{png,jpg,jpeg,svg}', {
+  eager: true,
+  import: 'default',
+})
+
 export const getRelativeImageUrl = (pathToImage: string) => {
-  const path = `../assets/${pathToImage}`
-  return new URL(path, import.meta.url).href
+  const fullPath = `/src/assets/${pathToImage}`
+  return images[fullPath] as string
 }

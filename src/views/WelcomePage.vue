@@ -22,20 +22,19 @@ onMounted(() => {
     loop: true,
   })
 
-  const target = document.querySelector('.scramble-text')!
-  const originalText = target.innerHTML
-  const { chars } = splitText(target as HTMLElement, {
-    chars: { wrap: true },
-  })
-
-  animate(chars, {
-    y: ['75%', '0%'],
-    duration: 750,
-    ease: 'out(3)',
-    delay: stagger(100),
-    loop: false,
-    alternate: true,
-  })
+  // const target = document.querySelector('.scramble-text')!
+  // const { chars } = splitText(target as HTMLElement, {
+  //   chars: { wrap: true, includeSpaces: true },
+  // })
+  //
+  // animate(chars, {
+  //   y: [30, 0],
+  //   duration: 750,
+  //   ease: 'out(3)',
+  //   delay: stagger(100),
+  //   loop: false,
+  //   alternate: true,
+  // })
 })
 </script>
 
@@ -44,6 +43,8 @@ onMounted(() => {
     <div ref="page" class="flex flex-col lg:flex-row gap-8 md:gap-16">
       <div class="Welcome-column">
         <h2 class="has-text-brand-blue md:mb-12">{{ $t('intro.greeting') }}</h2>
+
+
         <h1 class="tracking-widest mb-6 md:mb-12">
           <span> {{ $t('intro.header.role') }} </span
           ><span class="scramble-text">{{ $t('intro.header.role2') }} </span>
@@ -56,6 +57,9 @@ onMounted(() => {
             </div>
           </div>
         </h1>
+
+
+
         <div class="flex flex-col gap-6 min-w-2xs max-w-80">
           <Button
             class="px-16 transition-transform duration-300 hover:scale-105"
