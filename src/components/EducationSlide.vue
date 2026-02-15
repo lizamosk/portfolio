@@ -43,6 +43,7 @@ const onHide = () => {
       </div>
       <img
         :alt="place"
+        loading="lazy"
         :src="getRelativeImageUrl(props.image)"
         class="Slide__image"
         @click="openFullScreen"
