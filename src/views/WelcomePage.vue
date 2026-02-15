@@ -6,6 +6,7 @@ import { onMounted, useTemplateRef } from 'vue'
 import { useElementVisibility } from '@vueuse/core'
 import PencilShapeSvg from '@/assets/icons/vector/pencil-shape.svg'
 import { animate, splitText, stagger, svg } from 'animejs'
+import welcomeVideo from '@/assets/video/welcome.mp4'
 
 const pageRef = useTemplateRef<HTMLElement>('page')
 const isPageVisible = useElementVisibility(pageRef)
@@ -84,7 +85,9 @@ onMounted(() => {
           class="rounded-3xl max-h-[40rem]"
           loop
           muted
-          src="../assets/video/welcome.mp4"
+          playsinline
+          preload="auto"
+          :src="welcomeVideo"
         />
       </div>
     </div>
