@@ -1,6 +1,10 @@
-<script setup lang="ts">
-import { onMounted, ref, useSlots } from 'vue'
-import Button from '@/components/base/Button.vue'
+<script lang="ts" setup>
+import { computed, useTemplateRef } from 'vue'
+import { useActiveItemOnScroll } from '@/composables/useActiveItemOnScroll'
+import ChevronRightIcon from '@/assets/icons/chevron-right.svg'
+import ChevronLeftIcon from '@/assets/icons/chevron-left.svg'
+import ChevronUpIcon from '@/assets/icons/chevron-up.svg'
+import ChevronDownIcon from '@/assets/icons/chevron-down.svg'
 
 const props = defineProps({
   direction: {
@@ -20,37 +24,90 @@ const props = defineProps({
     default: 400,
   },
 })
-onMounted(() => {
-  console.log('Carousel:', props)
-})
 
-const activeSlide = ref(0)
+const containerRef = useTemplateRef('slides')
+const {
+  activeEl: activeSlide,
+  index: activeSlideIndex,
+  scrollToSlide,
+} = useActiveItemOnScroll(containerRef, '.Slide__container')
+
 const viewNextSlide = () => {
-  if (activeSlide.value === props.slides.length - 1) {
-    activeSlide.value = 0;
+  if (activeSlideIndex.value === props.slides.length - 1) {
+    scrollToSlide(0)
   } else {
-    activeSlide.value++;
-    console.log(activeSlide.value)
+    scrollToSlide(activeSlideIndex.value! + 1)
   }
 }
+
+const viewPreviousSlide = () => {
+  if (activeSlideIndex.value === 0) {
+    scrollToSlide(props.slides.length - 1)
+  } else {
+    scrollToSlide(activeSlideIndex.value! - 1)
+  }
+}
+
+const isVertical = computed(() => props.direction === 'vertical')
+
+const navigationIcons = computed(() => {
+  return isVertical.value
+    ? { iconPrevious: ChevronUpIcon, iconNext: ChevronDownIcon }
+    : { iconPrevious: ChevronLeftIcon, iconNext: ChevronRightIcon }
+})
 </script>
 
 <template>
   <section
-    class="snap-mandatory flex scroll-smooth overflow-auto Slides"
+    ref="slides"
     :class="[direction === 'horizontal' ? 'snap-x' : 'snap-y flex-col']"
-    :style="{ height: height + 'px' }"
+    class="snap-mandatory flex scroll-smooth overflow-auto Slides"
   >
     <div
-      :key="slide.toString()"
       v-for="(slide, i) in slides"
+      :key="slide.toString()"
+      :class="[
+        isVertical && 'flex-col',
+        `Slide__container-${i}`,
+        i === activeSlideIndex && 'Slide__container--active',
+      ]"
+      :style="{ '--n': i + 1 }"
       class="Slide__container snap-center flex"
-      :class="[direction === 'vertical' && 'flex-col']"
-      :style="{ '--n': i }"
     >
-      <component :is="slideComponent" class="Slide" v-bind="slide">
-<!--        <Button @click="viewNextSlide"> > </Button>-->
-      </component>
+      <div :class="isVertical ? 'flex-col' : 'flex-row'" class="Slide__frame flex w-full">
+        <component
+          :is="navigationIcons.iconPrevious"
+          v-if="i > 0"
+          class="w-8 h-8 icon primary"
+          :class="[activeSlideIndex !== i ? 'blur pointer-events-none' : '', isVertical ? 'mb-3' : 'mr-3']"
+          @click="
+            () => {
+              if (activeSlideIndex === i) {
+                viewPreviousSlide()
+              }
+            }
+          "
+        ></component>
+        <component
+          :is="slideComponent"
+          :class="isVertical ? 'Slide--vertical' : 'Slide--horizontal'"
+          v-bind="slide"
+        >
+        </component>
+        <component
+          :is="navigationIcons.iconNext"
+          v-if="i < slides.length - 1"
+          class="w-8 h-8 icon primary"
+          :class="[activeSlideIndex !== i ? 'blur pointer-events-none' : '', isVertical ? 'mb-3' : 'mr-3']"
+          @click="
+            () => {
+              if (activeSlideIndex === i) {
+                viewNextSlide()
+              }
+            }
+          "
+        ></component>
+      </div>
     </div>
   </section>
 </template>

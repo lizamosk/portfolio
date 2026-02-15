@@ -1,0 +1,15 @@
+.icon {
+    cursor: pointer;
+
+    &.primary {
+        color: var(--sky-blue-darker);
+
+        &:hover, &:focus {
+            color: var(--dust-blue)
+        }
+
+        &:active {
+            color: var(--brand-blue)
+        }
+    }
+}

@@ -1,27 +1,35 @@
-<script setup lang="ts">
-import FlowerSvg from '@/assets/icons/flower.svg'
+<script lang="ts" setup>
 import InstagramLogo from '@/assets/icons/social/instagram.svg'
 import LinkedinLogo from '@/assets/icons/social/linkedin.svg'
+import TelegramLogo from '@/assets/icons/social/telegram.svg'
+
 const currentYear = new Date().getFullYear()
 </script>
 
 <template>
   <footer
-    class="text-white w-full
-    grid-rows-2
-    bg-dust-blue grid grid-cols-2 md:grid-cols-3 align-baseline justify-between pb-4 pt-8 px-8"
+    class="text-white w-full grid-rows-[1fr_auto] bg-dust-blue grid grid-cols-3 align-baseline justify-between pb-4 pt-8 px-8 lg:px-20 xl:px-24"
   >
-    <div>
-      <a href="#">Made by Liza Moskalenko <FlowerSvg /> </a>
-      <a> {{ $t('navigation.cv') }} </a>
+    <div class="flex flex-col gap-2">
+      <p class="flex">Made by Liza Moskalenko &#129653;</p>
+      <a class="ActionLink light"> {{ $t('navigation.cv') }} </a>
     </div>
-    <span class="row-start-2 md:col-start-2 text-center"> {{ currentYear }}</span>
-    <div class="flex flex-col gap-4 md:col-start-3 items-end">
+    <span class="row-start-2 col-start-2 text-center pt-3 pb-4"> {{ currentYear }}</span>
+    <div class="flex flex-col gap-4 col-start-3 items-end">
       <div class="flex gap-2 justify-start">
-        <a> <LinkedinLogo /> </a>
-        <a> <InstagramLogo /></a>
+        <a href="https://t.me/limoskk" target="_blank">
+          <TelegramLogo class="ActionLink light"
+        /></a>
+        <a href="https://www.linkedin.com/in/limoskk/" target="_blank">
+          <LinkedinLogo class="ActionLink light" />
+        </a>
+        <a href="https://www.instagram.com/limoskk/" target="_blank">
+          <InstagramLogo class="ActionLink light"
+        /></a>
       </div>
-      <span> limoskk1@gmail.com </span>
+      <a class="ActionLink light" href="mailto:limoskk.social@gmail.com">
+        limoskk.social@gmail.com
+      </a>
     </div>
   </footer>
 </template>

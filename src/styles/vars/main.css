@@ -1,5 +1,6 @@
 :root {
-  --tablet: 769px;
-  --size-1: 4px;
-  --size-2: 8px;
+    --desktop: 1020px;
+    --tablet: 769px;
+    --size-1: 4px;
+    --size-2: 8px;
 }

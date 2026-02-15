@@ -1,0 +1,47 @@
+@keyframes shineEffect {
+    from {
+        transform: scale(0.8);
+        opacity: 0.7
+    }
+    25% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+        fill: white;
+        stroke: white;
+    }
+    to {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+}
+
+button {
+    &:hover, &:focus {
+        svg.svg--shine {
+            path {
+                /* Set the transform-origin so they rotate/scale from their center */
+                transform-origin: center;
+                /* Apply the base animation */
+                animation: shineEffect 1.5s linear calc(var(--delay)) infinite both;
+            }
+
+            /* Simply assign the variable to each path */
+
+            path:nth-child(1) {
+                --delay: 0.1s;
+            }
+
+            path:nth-child(2) {
+                --delay: 0.25s;
+            }
+
+            path:nth-child(3) {
+                --delay: 0.4s;
+            }
+        }
+    }
+}
