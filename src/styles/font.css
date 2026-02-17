@@ -32,20 +32,24 @@
 
 :root {
     h1 {
-        font: 700 44px/150% 'Andika',
+        font: 700 40px/150% 'Andika',
+        sans-serif;
+    }
+
+    h2 {
+        font: 400 28px/150% 'Nunito Sans',
         sans-serif;
     }
 
     @media (max-width: 768px) {
         h1 {
-            font: 700 32px/150% 'Andika',
+            font: 700 28px/150% 'Andika',
             sans-serif;
         }
-    }
-
-    h2 {
-        font: 400 32px/150% 'Nunito Sans',
-        sans-serif;
+        h2 {
+            font: 400 24px/150% 'Nunito Sans',
+            sans-serif;
+        }
     }
 
     h3 {

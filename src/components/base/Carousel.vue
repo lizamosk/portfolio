@@ -79,7 +79,10 @@ const navigationIcons = computed(() => {
           :is="navigationIcons.iconPrevious"
           v-if="i > 0"
           class="w-8 h-8 icon primary"
-          :class="[activeSlideIndex !== i ? 'blur pointer-events-none' : '', isVertical ? 'mb-3' : 'mr-3']"
+          :class="[
+            activeSlideIndex !== i ? 'invisible pointer-events-none' : '',
+            isVertical ? 'mb-3' : 'mr-3',
+          ]"
           @click="
             () => {
               if (activeSlideIndex === i) {
@@ -98,7 +101,10 @@ const navigationIcons = computed(() => {
           :is="navigationIcons.iconNext"
           v-if="i < slides.length - 1"
           class="w-8 h-8 icon primary"
-          :class="[activeSlideIndex !== i ? 'blur pointer-events-none' : '', isVertical ? 'mb-3' : 'mr-3']"
+          :class="[
+            activeSlideIndex !== i ? 'invisible pointer-events-none' : '',
+            isVertical ? 'mt-3' : 'mr-3',
+          ]"
           @click="
             () => {
               if (activeSlideIndex === i) {

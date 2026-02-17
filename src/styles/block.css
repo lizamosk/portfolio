@@ -21,8 +21,6 @@ a {
 
     .Page {
         scroll-snap-align: start;
-        padding-bottom: 4rem;
-        padding-top: 2rem;
         min-height: calc(100vh - 78px);
 
         h2 {
@@ -101,12 +99,12 @@ a {
 
         &:not(.Slide__container--active):nth-child(n) {
             .Slide {
-                transform: scale(0.8);
+                transform: scale(0.9);
                 /*width: calc(1 / var(--n) * 175%);*/
                 filter: blur(calc(var(--n) * 2px));
 
                 .Slide__image {
-                    transform: scale(0.8);
+                    transform: scale(0.9);
                     /*transform: scale(calc(1 / var(--n) * 175%));*/
                 }
             }

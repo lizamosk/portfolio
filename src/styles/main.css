@@ -12,14 +12,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    /*background: var(--neutral-grey);*/
-}
-
 #app {
     font: 400 16px/150% 'Nunito Sans',
     sans-serif;
     color: var(--primary-dark);
+    background: var(--neutral-grey);
+    overscroll-behavior-y: contain;
     scrollbar-color: grey var(--neutral-base-darker);
 }
 
