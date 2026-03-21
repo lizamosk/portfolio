@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear()
 
 <template>
   <footer
-    class="text-white w-full grid-rows-[1fr_auto] bg-dust-blue grid grid-cols-3 align-baseline justify-between pb-4 pt-8 px-8 lg:px-20 xl:px-24"
+    class="footer-touch-safe-bottom text-white w-full grid-rows-[1fr_auto] bg-dust-blue grid grid-cols-3 align-baseline justify-between pb-4 pt-8 px-8 lg:px-20 xl:px-24"
   >
     <div class="flex flex-col gap-2">
       <p class="flex">Made by Liza Moskalenko &#129653;</p>
@@ -34,8 +34,8 @@ const currentYear = new Date().getFullYear()
         limoskk.social@gmail.com
       </a>
     </div>
-    <span class="text-center text-sm opacity-90 lg:row-start-2 lg:col-start-2 lg:pt-3 lg:pb-4">
-      {{ currentYear }}
-    </span>
+<!--    <span class="text-center text-sm opacity-90 lg:row-start-2 lg:col-start-2 lg:pt-3 lg:pb-4">-->
+<!--      {{ currentYear }}-->
+<!--    </span>-->
   </footer>
 </template>
