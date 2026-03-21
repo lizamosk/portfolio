@@ -15,16 +15,20 @@
 * {
   -webkit-tap-highlight-color: transparent;
 }
+
 html,
 body {
+  background-color: var(--neutral-grey);
   overscroll-behavior: none;
 }
+
 #app {
   font:
     400 16px/150% 'Nunito Sans',
     sans-serif;
   color: var(--primary-dark);
   background: var(--neutral-grey);
+  min-height: 100%;
   overscroll-behavior-y: contain;
   scrollbar-color: grey var(--neutral-base-darker);
 }
