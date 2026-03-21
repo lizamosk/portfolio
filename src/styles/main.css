@@ -12,22 +12,31 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+  overscroll-behavior: none;
+  height: 100%;
+}
 #app {
-    font: 400 16px/150% 'Nunito Sans',
+  font:
+    400 16px/150% 'Nunito Sans',
     sans-serif;
-    color: var(--primary-dark);
-    background: var(--neutral-grey);
-    overscroll-behavior-y: contain;
-    scrollbar-color: grey var(--neutral-base-darker);
+  color: var(--primary-dark);
+  background: var(--neutral-grey);
+  overscroll-behavior-y: contain;
+  scrollbar-color: grey var(--neutral-base-darker);
 }
 
 #main-container {
-    height: calc(100dvh - 78px);
-    overflow-y: scroll;
-    overscroll-behavior-y: contain;
-    overflow-anchor: none;
-    @media (min-width: var(--tablet)) {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
+  height: calc(100dvh - 78px);
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  overflow-anchor: none;
+  @media (min-width: var(--tablet)) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }

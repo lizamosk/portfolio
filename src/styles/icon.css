@@ -4,7 +4,7 @@
     &.primary {
         color: var(--sky-blue-darker);
 
-        &:hover, &:focus {
+        &:hover {
             color: var(--dust-blue)
         }
 
