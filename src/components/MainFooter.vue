@@ -27,9 +27,15 @@ const currentYear = new Date().getFullYear()
           <InstagramLogo class="ActionLink light"
         /></a>
       </div>
-      <a class="ActionLink light" href="mailto:limoskk.social@gmail.com">
+      <a
+        class="ActionLink light break-words text-left lg:text-right"
+        href="mailto:limoskk.social@gmail.com"
+      >
         limoskk.social@gmail.com
       </a>
     </div>
+    <span class="text-center text-sm opacity-90 lg:row-start-2 lg:col-start-2 lg:pt-3 lg:pb-4">
+      {{ currentYear }}
+    </span>
   </footer>
 </template>
