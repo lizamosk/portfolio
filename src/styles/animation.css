@@ -20,7 +20,7 @@
 }
 
 button {
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
         svg.svg--shine {
             path {
                 /* Set the transform-origin so they rotate/scale from their center */

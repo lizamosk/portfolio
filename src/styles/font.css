@@ -92,7 +92,7 @@
     cursor: pointer;
     color: var(--primary-dark);
 
-    &:hover, &:focus {
+    &:hover {
         color: var(--dust-blue)
     }
 
@@ -103,7 +103,7 @@
     &.light {
         color: white;
 
-        &:hover, &:focus {
+        &:hover {
             color: var(--sky-blue)
         }
 
