@@ -5,7 +5,7 @@ import PageContainer from '@/components/base/PageContainer.vue'
 import { onMounted, ref, useTemplateRef } from 'vue'
 import { useElementVisibility, useIntersectionObserver } from '@vueuse/core'
 import PencilShapeSvg from '@/assets/icons/vector/pencil-shape.svg'
-import { animate, splitText, stagger, svg } from 'animejs'
+import { animate, svg } from 'animejs'
 import welcomeVideo from '@/assets/video/welcome.mp4'
 
 const pageRef = useTemplateRef<HTMLElement>('page')
