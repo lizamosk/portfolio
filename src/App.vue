@@ -29,9 +29,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <!--   96px-->
+  <!--   78px-->
   <NavBar @contact:click="scrollToLastPage" />
-  <main id="main-container" class="relative top-[78px]">
+  <main id="main-container">
     <WelcomePage @contact:click="scrollToLastPage" />
     <AboutMe />
     <ExperiencePage />

@@ -19,8 +19,8 @@
 html,
 body {
   background-color: var(--neutral-grey);
-  overscroll-behavior-y: none;
-  overflow-anchor: none;
+  /*overflow-anchor: none;*/
+  overscroll-behavior-y: contain;
   scrollbar-color: grey var(--neutral-grey);
 }
 
@@ -48,7 +48,7 @@ body {
 
 /* Safe-area + space under Safari’s bottom bar: must live on the footer (same bg) so no gray gap. */
 @media (max-width: 1023px) and (pointer: coarse) {
-  .footer-touch-safe-bottom {
+  body {
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 2.75rem);
   }
 }
