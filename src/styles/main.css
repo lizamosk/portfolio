@@ -19,7 +19,8 @@
 html,
 body {
   background-color: var(--neutral-grey);
-  overscroll-behavior: none;
+  overscroll-behavior-y: contain;
+  overflow-anchor: none;
 }
 
 #app {
@@ -34,8 +35,8 @@ body {
 }
 
 #main-container {
-  height: calc(100dvh - 78px);
-  overflow-y: scroll;
+  /*height: calc(100dvh - 78px);*/
+  /*overflow-y: scroll;*/
   overscroll-behavior-y: contain;
   overflow-anchor: none;
   @media (min-width: var(--tablet)) {
