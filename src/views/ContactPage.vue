@@ -7,6 +7,7 @@ import * as yup from 'yup'
 import { useField, useForm } from 'vee-validate'
 import { ref } from 'vue'
 import { useDebouncedError } from '@/composables/useDebouncedError'
+import sanitizeHtml from 'sanitize-html'
 import emailjs from '@emailjs/browser'
 
 const schema = yup.object({
@@ -43,13 +44,13 @@ defineExpose({
 const onSubmit = handleSubmit(async (values) => {
   try {
     submitInProcess.value = true
+    const sanitizedMessage = sanitizeHtml(values.message)
     const response = await emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_CONTACT_US_ID,
-        values
-      )
-      .then(() => displaySuccessMessage.value = true)
+      .send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_CONTACT_US_ID, {
+        ...values,
+        message: sanitizedMessage,
+      })
+      .then(() => (displaySuccessMessage.value = true))
       .finally(() => (submitInProcess.value = false))
 
     setTimeout(() => {
