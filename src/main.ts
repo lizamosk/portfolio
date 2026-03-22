@@ -3,6 +3,9 @@ import App from './App.vue'
 import { setupLocale } from '@/i18n'
 import VueEasyLightbox from 'vue-easy-lightbox'
 import emailjs from '@emailjs/browser'
+import { initScrollToTopOnHardLoad } from '@/util/scroll'
+
+initScrollToTopOnHardLoad()
 
 const app = createApp(App)
 const i18n = setupLocale('en_GB')
