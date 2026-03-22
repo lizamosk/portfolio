@@ -2,7 +2,7 @@
 import Button from '@/components/base/Button.vue'
 import ScrollDownButton from '@/components/ScrollDownButton.vue'
 import PageContainer from '@/components/base/PageContainer.vue'
-import { onMounted, ref, useTemplateRef } from 'vue'
+import { onMounted, useTemplateRef } from 'vue'
 import { useElementVisibility, useIntersectionObserver } from '@vueuse/core'
 import PencilShapeSvg from '@/assets/icons/vector/pencil-shape.svg'
 import { animate, svg } from 'animejs'

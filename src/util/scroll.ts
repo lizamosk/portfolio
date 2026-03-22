@@ -34,9 +34,10 @@ const findNextPage = () => {
 
 export const scrollToPage = (element?: HTMLElement) => {
   if (element) {
-    element.scrollIntoView({
+    const top = element.getBoundingClientRect().top + documentScrollY() - 78
+    window.scrollTo({
+      top: Math.max(0, top),
       behavior: 'smooth',
-      block: 'start',
     })
   }
 }
@@ -55,7 +56,7 @@ function documentScrollY(): number {
 function navOffsetPx(): number {
   const nav = document.querySelector('nav.NavBar') as HTMLElement | null
   const h = nav?.getBoundingClientRect().height
-  return Math.ceil(h ?? 96) + 12
+  return Math.ceil(h ?? 96) + 24
 }
 
 /**
