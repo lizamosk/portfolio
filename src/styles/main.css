@@ -33,6 +33,10 @@ body {
   min-height: 100%;
 }
 
+#contact-page {
+  scroll-margin-top: 96px;
+}
+
 #main-container {
   /*height: calc(100dvh - 78px);*/
   /*overflow-y: scroll;*/

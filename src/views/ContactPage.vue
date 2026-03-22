@@ -7,7 +7,7 @@ import * as yup from 'yup'
 import { useField, useForm } from 'vee-validate'
 import { ref } from 'vue'
 import { useDebouncedError } from '@/composables/useDebouncedError'
-import sanitizeHtml from 'sanitize-html'
+import DOMPurify from 'dompurify'
 import emailjs from '@emailjs/browser'
 
 const schema = yup.object({
@@ -36,15 +36,10 @@ const displayedMessageError = useDebouncedError(messageError)
 const displaySuccessMessage = ref(false)
 const submitInProcess = ref(false)
 
-const root = ref<HTMLElement | null>(null)
-defineExpose({
-  $el: root,
-})
-
 const onSubmit = handleSubmit(async (values) => {
   try {
     submitInProcess.value = true
-    const sanitizedMessage = sanitizeHtml(values.message)
+    const sanitizedMessage = DOMPurify.sanitize(values.message)
     const response = await emailjs
       .send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_CONTACT_US_ID, {
         ...values,
@@ -65,9 +60,12 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <div class="LastPageContainer flex flex-col justify-between relative snap-start reveal-container">
+  <div
+    id="contact-page"
+    class="LastPageContainer flex flex-col justify-between relative snap-start reveal-container"
+  >
     <PageContainer class="pb-12 snap-none">
-      <div ref="root" class="grid md:grid-cols-2 md:gap-8">
+      <div class="grid md:grid-cols-2 md:gap-8">
         <div>
           <h2>Have some exciting projects to collaborate?</h2>
           <p class="pb-3">Message me, and I will get back to you ASAP!</p>

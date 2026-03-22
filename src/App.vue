@@ -6,18 +6,19 @@ import AboutMe from '@/views/AboutMe.vue'
 import ExperiencePage from '@/views/ExperiencePage.vue'
 import MainFooter from '@/components/MainFooter.vue'
 import ContactPage from '@/views/ContactPage.vue'
-import { scrollToPage } from '@/util/scroll.ts'
-import { onMounted, useTemplateRef } from 'vue'
+import { nextTick, onMounted } from 'vue'
 import EducationPage from '@/views/EducationPage.vue'
 import { useReveal } from '@/composables/useReveal'
-
-const lastPage = useTemplateRef<HTMLElement | null>('lastPage')
+import { scrollToContactPageAfterLayout } from '@/util/scroll'
 
 const scrollToLastPage = () => {
-  const el = lastPage.value?.$el
-  if (el) {
-    scrollToPage(el)
-  }
+  void nextTick(() => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollToContactPageAfterLayout()
+      })
+    })
+  })
 }
 
 const { observeElements } = useReveal()
@@ -30,12 +31,12 @@ onMounted(() => {
 <template>
   <!--   96px-->
   <NavBar @contact:click="scrollToLastPage" />
-  <main id="main-container" class="mt-[78px]">
+  <main id="main-container" class="relative top-[78px]">
     <WelcomePage @contact:click="scrollToLastPage" />
     <AboutMe />
     <ExperiencePage />
     <EducationPage />
-    <ContactPage ref="lastPage">
+    <ContactPage>
       <MainFooter />
     </ContactPage>
   </main>
