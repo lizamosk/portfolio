@@ -16,6 +16,7 @@
     "eslint": "^9.39.2",
     "prettier": "^3.6.2",
     "radix-vue": "^1.9.17",
+    "sanitize-html": "^2.17.2",
     "vee-validate": "^4.15.1",
     "vue": "^3.5.17",
     "vue-easy-lightbox": "^1.19.0",
@@ -23,6 +24,7 @@
     "yup": "^1.7.1"
   },
   "devDependencies": {
+    "@types/sanitize-html": "^2.16.1",
     "@vitejs/plugin-vue": "^6.0.0",
     "autoprefixer": "^10.4.19",
     "path": "^0.12.7",

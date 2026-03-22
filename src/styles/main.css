@@ -21,6 +21,7 @@ body {
   background-color: var(--neutral-grey);
   overscroll-behavior-y: none;
   overflow-anchor: none;
+  scrollbar-color: grey var(--neutral-grey);
 }
 
 #app {
@@ -30,15 +31,11 @@ body {
   color: var(--primary-dark);
   background: var(--neutral-grey);
   min-height: 100%;
-  overscroll-behavior-y: contain;
-  scrollbar-color: grey var(--neutral-grey);
 }
 
 #main-container {
   /*height: calc(100dvh - 78px);*/
   /*overflow-y: scroll;*/
-  overscroll-behavior-y: contain;
-  overflow-anchor: none;
   @media (min-width: var(--tablet)) {
     padding-left: 4rem;
     padding-right: 4rem;

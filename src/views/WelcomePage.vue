@@ -16,16 +16,20 @@ const emit = defineEmits<{
   (e: 'contact:click'): void
 }>()
 
-useIntersectionObserver(videoPlayer, ([{ isIntersecting }]) => {
-  if (!videoPlayer.value) {
-    return
-  }
-  if (isIntersecting) {
-    videoPlayer.value.play()
-  } else {
-    videoPlayer.value.pause()
-  }
-})
+useIntersectionObserver(
+  videoPlayer,
+  ([{ isIntersecting }]) => {
+    if (!videoPlayer.value) {
+      return
+    }
+    if (isIntersecting) {
+      videoPlayer.value.play()
+    } else {
+      videoPlayer.value.pause()
+    }
+  },
+  { immediate: true }
+)
 
 onMounted(() => {
   animate(svg.createDrawable('.pencil-shape-path'), {
