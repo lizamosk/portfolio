@@ -3,7 +3,6 @@ import PageContainer from '@/components/base/PageContainer.vue'
 import { useI18n } from 'vue-i18n'
 const i18n = useI18n()
 const topics = i18n.tm('about_me.personal.topics')
-console.log('topics:', topics)
 </script>
 
 <template>
