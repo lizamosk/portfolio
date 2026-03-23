@@ -8,9 +8,9 @@ export function useReveal() {
           if (entry.isIntersecting) {
             // Trigger the Anime.js Reveal
             animate(entry.target, {
-              translateY: [60, 0], // Starts 60px down
+              translateY: [30, 0], // Starts 30px down
               opacity: [0, 1], // Fades in
-              duration: 2000,
+              duration: 800,
               easing: 'easeOutQuart',
               delay: 200, // Slight delay for smoothness
             })
@@ -28,7 +28,7 @@ export function useReveal() {
     // Find all elements and start observing
     document.querySelectorAll(`.${className}`).forEach((el) => {
       // Set initial state via JS to avoid "flicker" before script loads
-      ;(el as HTMLElement).style.opacity = '0'
+      // ;(el as HTMLElement).style.opacity = '0'
       observer.observe(el)
     })
   }

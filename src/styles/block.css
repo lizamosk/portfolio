@@ -164,6 +164,7 @@ a {
   opacity: 0;
   /* Optional: prevents layout shift by reserving space */
   will-change: transform, opacity;
+  transform: translate3d(0, 30px, 0);
 }
 
 .video-wrapper {
