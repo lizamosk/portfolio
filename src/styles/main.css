@@ -26,7 +26,7 @@ body {
 
 #app {
   font:
-    400 16px/150% 'Nunito Sans',
+    400 16px/120% 'Nunito Sans',
     sans-serif;
   color: var(--primary-dark);
   background: var(--neutral-grey);
