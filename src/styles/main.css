@@ -49,6 +49,6 @@ body {
 /* Safe-area + space under Safari’s bottom bar: must live on the footer (same bg) so no gray gap. */
 @media (max-width: 1023px) and (pointer: coarse) {
   body {
-    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1.5rem);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
