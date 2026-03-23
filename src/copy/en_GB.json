@@ -19,13 +19,15 @@
     "personal": {
       "header": "Something personal...",
       "topics": [
-        "Valencia, Spain",
-        "Commercial experience since 2020",
-        "Diploma in Software Engineering & UI/UX",
-        "Book worm (absolute Murakami and Dostoevsky fan!)",
-        "Love art, paint and crocheting",
-        "Love art, paint and crocheting",
-        "Addicted to healthy lifestyle. Gym, cycling, no-sugar meals is something that I truly love!"
+        ["\uD83D\uDCCD", "Valencia, Spain"],
+        ["\uD83D\uDCBB", "Commercial experience since 2020"],
+        ["\uD83D\uDC69\uD83C\uDFFB\u200D\uD83C\uDF93", "Diploma in Software Engineering & UI/UX"],
+        ["\uD83D\uDCDA", "Book worm (absolute Murakami and Dostoevsky fan!)"],
+        ["\uD83C\uDFA8", "Love art, paint and crocheting"],
+        [
+          "\uD83E\uDD57",
+          "Addicted to healthy lifestyle. Gym, cycling, no-sugar meals is something that I truly love!"
+        ]
       ]
     }
   },

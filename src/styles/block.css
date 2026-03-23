@@ -38,9 +38,17 @@ a {
 }
 
 .PersonalThings {
+    height: fit-content;
+    min-width: 250px;
     .PersonalThings__items {
         p {
             margin-bottom: var(--size-2);
+        }
+
+        @media (min-width: 769px) {
+            p {
+                margin-bottom: var(--size-4);
+            }
         }
     }
 }
