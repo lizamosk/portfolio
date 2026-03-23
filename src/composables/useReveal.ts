@@ -10,7 +10,7 @@ export function useReveal() {
             animate(entry.target, {
               translateY: [30, 0], // Starts 30px down
               opacity: [0, 1], // Fades in
-              duration: 800,
+              duration: 500,
               easing: 'easeOutQuart',
               delay: 200, // Slight delay for smoothness
             })
