@@ -56,7 +56,7 @@ function documentScrollY(): number {
 function navOffsetPx(): number {
   const nav = document.querySelector('nav.NavBar') as HTMLElement | null
   const h = nav?.getBoundingClientRect().height
-  return Math.ceil(h ?? 96) + 24
+  return Math.ceil(h ?? 78) + 48
 }
 
 /**
