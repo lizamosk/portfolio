@@ -37,6 +37,7 @@
     "typescript": "^5.9.3",
     "vite": "^7.0.0",
     "vite-svg-loader": "^5.1.0",
-    "vue-cli-service": "^5.0.10"
+    "vue-cli-service": "^5.0.10",
+    "wrangler": "^4.76.0"
   }
 }
