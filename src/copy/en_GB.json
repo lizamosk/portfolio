@@ -99,7 +99,7 @@
         "Increased code coverage with unit and integration tests from 20% to 60% reducing the number of errors",
         "Developed an internal library for collecting statistics from Kubernetes and cluster management which increased\ncode reusability"
       ],
-      "role": "Frontend Engineer",
+      "role": "Software Engineer",
       "technologies": ["Golang", "Java", "Spring Framework", "PostgreSQL", "Docker"]
     },
 
