@@ -1,8 +1,8 @@
-import cv from '../../public/Liza_Moskalenko_CV_Frontend.pdf'
+import { CV_PATH } from '@/contants'
 
 export const downloadCV = async () => {
   const link = document.createElement('a');
-  link.href = cv;
+  link.href = CV_PATH;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   document.body.appendChild(link);

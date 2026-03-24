@@ -2,7 +2,7 @@
 import InstagramLogo from '@/assets/icons/social/instagram.svg'
 import LinkedinLogo from '@/assets/icons/social/linkedin.svg'
 import TelegramLogo from '@/assets/icons/social/telegram.svg'
-import cv from '../../public/Liza_Moskalenko_CV_Frontend.pdf'
+import { CV_PATH } from '@/contants'
 
 const currentYear = new Date().getFullYear()
 </script>
@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear()
   >
     <div class="flex flex-col gap-2">
       <p class="flex">Made by Liza Moskalenko &#129653;</p>
-      <a class="ActionLink light" rel="noreferrer noopener" target="_blank" :href="cv">
+      <a class="ActionLink light" rel="noreferrer noopener" target="_blank" :href="CV_PATH">
         {{ $t('navigation.cv') }}
       </a>
     </div>
