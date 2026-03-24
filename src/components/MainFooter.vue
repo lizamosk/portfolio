@@ -2,6 +2,7 @@
 import InstagramLogo from '@/assets/icons/social/instagram.svg'
 import LinkedinLogo from '@/assets/icons/social/linkedin.svg'
 import TelegramLogo from '@/assets/icons/social/telegram.svg'
+import cv from '@/assets/docs/Liza_Moskalenko_CV_Frontend.pdf'
 
 const currentYear = new Date().getFullYear()
 </script>
@@ -12,7 +13,9 @@ const currentYear = new Date().getFullYear()
   >
     <div class="flex flex-col gap-2">
       <p class="flex">Made by Liza Moskalenko &#129653;</p>
-      <a class="ActionLink light"> {{ $t('navigation.cv') }} </a>
+      <a class="ActionLink light" rel="noreferrer noopener" target="_blank" :href="cv">
+        {{ $t('navigation.cv') }}
+      </a>
     </div>
     <span class="row-start-2 col-start-2 text-center pt-3 pb-4"> {{ currentYear }}</span>
     <div class="flex flex-col gap-4 col-start-3 items-end">
@@ -34,8 +37,5 @@ const currentYear = new Date().getFullYear()
         limoskk.social@gmail.com
       </a>
     </div>
-<!--    <span class="text-center text-sm opacity-90 lg:row-start-2 lg:col-start-2 lg:pt-3 lg:pb-4">-->
-<!--      {{ currentYear }}-->
-<!--    </span>-->
   </footer>
 </template>

@@ -7,6 +7,7 @@ import { useElementVisibility, useIntersectionObserver } from '@vueuse/core'
 import PencilShapeSvg from '@/assets/icons/vector/pencil-shape.svg'
 import { animate, svg } from 'animejs'
 import welcomeVideo from '@/assets/video/welcome.mp4'
+import { downloadCV } from '@/util/cv'
 
 const pageRef = useTemplateRef<HTMLElement>('page')
 const isPageVisible = useElementVisibility(pageRef)
@@ -87,7 +88,8 @@ onMounted(() => {
           >
             {{ $t('intro.contact_me') }}
           </Button>
-          <Button class="px-16 transition-transform duration-300 hover:scale-105" type="outlined">
+          <Button class="px-16 transition-transform duration-300 hover:scale-105" type="outlined"
+          @click="downloadCV">
             {{ $t('intro.download_cv') }}
           </Button>
         </div>

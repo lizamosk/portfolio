@@ -38,12 +38,14 @@
       "timeline": "May 2024 - Present",
       "description": "",
       "points": [
-        "Led the development of several client-facing micro-frontends from conception to production, that serve over 1.3 million active customers per year",
+        "Led the development of several client-facing micro-frontends from conception to production, that serve over 2 millions active customers per year",
         "Collaborated with UI/UX designers and fellow frontend engineers to introduce and implement a new company-wide design system, significantly improving consistency, development velocity, and maintainability across multiple products",
         "Engineered a modern document generation pipeline utilizing AWS Lambdas and Puppeteer, replacing an outdated system with a faster, more scalable, and technologically advanced solution",
         "Developed and delivered a critical feature for the Operational team that directly addressed a key pain point, resulting in a quantifiable reduction of over 40 weekly alerts",
         "Optimized website performance by implementing asset inlining strategies, analyzing bottlenecks and reducing overall site loading time by 30%, enhancing user experience",
-        "Proposed and implemented improvements to the code review process, streamlining workflows and increasing code review speed by 1-2 days, which accelerated feature delivery timelines"
+        "Proposed and implemented improvements to the code review process, streamlining workflows and increasing code review speed by 1-2 days, which accelerated feature delivery timelines",
+        "Implemented the Product selection micro-frontends (both admin and client-facing) - from architecture to code - which led to increasing conversion in the UK up to 15%",
+        "Designed and introduced new translations management process, including CLI library, which significantly improved development culture across all engineering squads"
       ],
       "role": "Frontend Engineer",
       "technologies": [
