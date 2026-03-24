@@ -37,8 +37,5 @@ const currentYear = new Date().getFullYear()
         limoskk.social@gmail.com
       </a>
     </div>
-    <!--    <span class="text-center text-sm opacity-90 lg:row-start-2 lg:col-start-2 lg:pt-3 lg:pb-4">-->
-    <!--      {{ currentYear }}-->
-    <!--    </span>-->
   </footer>
 </template>
