@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import FlowerSvg from '@/assets/icons/flower.svg'
-import cv from '@/assets/docs/Liza_Moskalenko_CV_Frontend.pdf'
+import cv from '../../public/Liza_Moskalenko_CV_Frontend.pdf'
 
 const emit = defineEmits<{
   (e: 'contact:click'): void

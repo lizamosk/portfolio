@@ -2,7 +2,7 @@
 import InstagramLogo from '@/assets/icons/social/instagram.svg'
 import LinkedinLogo from '@/assets/icons/social/linkedin.svg'
 import TelegramLogo from '@/assets/icons/social/telegram.svg'
-import cv from '@/assets/docs/Liza_Moskalenko_CV_Frontend.pdf'
+import cv from '../../public/Liza_Moskalenko_CV_Frontend.pdf'
 
 const currentYear = new Date().getFullYear()
 </script>
