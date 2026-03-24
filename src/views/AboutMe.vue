@@ -23,7 +23,7 @@ const topics = i18n.tm('about_me.personal.topics')
             My name is E<span class="text-purple">liza</span>veta Moskalenko.
           </h3>
           <p>
-            <strong> Frontend Engineer </strong> with 4+ years of hands-on experience delivering
+            <strong> Frontend Engineer </strong> with 5+ years of hands-on experience delivering
             robust and scalable web applications tailored to real-world user & business needs.
           </p>
           <br />
