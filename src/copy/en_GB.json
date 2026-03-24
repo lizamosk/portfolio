@@ -47,7 +47,7 @@
         "Implemented the Product selection micro-frontends (both admin and client-facing) - from architecture to code - which led to increasing conversion in the UK up to 15%",
         "Designed and introduced new translations management process, including CLI library, which significantly improved development culture across all engineering squads"
       ],
-      "role": "Frontend Engineer",
+      "role": "Senior Frontend Engineer",
       "technologies": [
         "Vue3",
         "React",
@@ -75,7 +75,7 @@
         "Improved the company’s engineering culture by presentation at the internal meetups and code reviewing",
         "Actively participated in groomings and knowledge-sharing among team members"
       ],
-      "role": "Frontend Engineer",
+      "role": "Frontend Web Developer",
       "technologies": [
         "React",
         "TypeScript",
@@ -113,7 +113,7 @@
         "Optimized image and fonts loading, improving site loading speed by up 20%",
         "Implemented a library with dynamic UI components that adapt to various user roles"
       ],
-      "role": "Frontend Engineer",
+      "role": "Frontend Developer",
       "technologies": ["React", "Redux", "TypeScript", "CSS", "Jest"]
     }
   ],
