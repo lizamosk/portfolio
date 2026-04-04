@@ -16,6 +16,11 @@
   },
   "about_me": {
     "header": "About me",
+    "my_name": "My name is E<span class='text-purple'>liza</span>veta Moskalenko.",
+    "domains": "<p><strong> Frontend Engineer </strong> with 5+ years of hands-on experience delivering robust and scalable web applications tailored to real-world user & business needs. </p> <br /> <p>I’ve worked across different domains such as:</p> <ul class=\"list-inside\">   <li>Healthcare</li>\n   <li>Cartography & maps</li>\n<li>Education</li>\n </ul>",
+    "where_skilled": "I’m skilled in modern JavaScript frameworks & libraries (Vue 3, React) and micro-frontend\n          architecture, with a focus on page performance and clean code.",
+    "strong_side": "Strong cross-functional collaborator, comfortable working across product, design, and\n engineering to drive impactful solutions.",
+    "education": "I have a Bachelor's degree in Software engineering, certification in UI & UX design\n          <span class=\"text-purple\"> (currently continue to learn it) </span> and some teaching\n          background: led practical classes on Object-Oriented Programming at the university level\n          and private IT lessons for schoolchildren.",
     "personal": {
       "header": "Something personal...",
       "topics": [
@@ -141,9 +146,37 @@
       "dates": "2025",
       "title": "UX Design Foundations",
       "image": "images/education/ux_foundations_uxcel.png"
+    },
+    {
+      "place": "Uxcel",
+      "dates": "2026",
+      "title": "Introduction to Design Systems",
+      "image": "images/education/ds_uxcel.png"
     }
   ],
   "contact": {
-    "message_sent": "Amazing! Your message was sent."
+    "header": "Have some exciting projects to collaborate?",
+    "form_placeholder": "Hi Liza, I would like to collaborate...",
+    "name_placeholder": "Please enter your name",
+    "name_label": "Name",
+    "email_label": "Email",
+    "message_label": "Your message",
+    "message_me": "Message me, and I will get back to you ASAP!",
+    "send_message": "Send",
+    "message_sent": "Amazing! Your message was sent.",
+    "error": {
+      "name_required": "Name is required",
+      "name_letters": "Name must contain only letters",
+      "email_required": "Email is required",
+      "email_wrong": "Wrong email format",
+      "message_required": "Message is required"
+    }
+  },
+  "accordion": {
+    "more_info": "More info",
+    "less_info": "Less info"
+  },
+  "footer": {
+    "made_by_liza": "Made by Liza Moskalenko"
   }
 }

@@ -1,5 +1,11 @@
 <script lang="ts" setup>
-import { AccordionContent, AccordionHeader, AccordionItem, AccordionRoot, AccordionTrigger, } from 'radix-vue'
+import {
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
+  AccordionRoot,
+  AccordionTrigger,
+} from 'radix-vue'
 import { ref } from 'vue'
 import ChevronDown from '@/assets/icons/chevron-down.svg'
 import ChevronUp from '@/assets/icons/chevron-up.svg'
@@ -22,10 +28,10 @@ const activeItem = ref()
             v-if="activeItem === '1'"
             class="inline-flex place-items-center gap-1.5 cursor-pointer ActionLink"
           >
-            Less info <ChevronUp class="AccordionChevron w-4" />
+            {{ $t('accordion.less_info') }} <ChevronUp class="AccordionChevron w-4" />
           </span>
           <span v-else class="inline-flex place-items-center gap-1.5 cursor-pointer ActionLink">
-            More info <ChevronDown class="AccordionChevron w-4" />
+            {{ $t('accordion.more_info') }} <ChevronDown class="AccordionChevron w-4" />
           </span>
         </AccordionTrigger>
       </AccordionHeader>
@@ -37,7 +43,7 @@ const activeItem = ref()
             class="block mx-auto underline cursor-pointer ActionLink"
             @click="activeItem = undefined"
           >
-            Less info
+            {{ $t('accordion.less_info') }}
           </a>
         </div>
       </AccordionContent>
