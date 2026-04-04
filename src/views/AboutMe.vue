@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import PageContainer from '@/components/base/PageContainer.vue'
 import { useI18n } from 'vue-i18n'
-const i18n = useI18n()
+const i18n = useI18n({ useScope: 'global' })
 const topics = i18n.tm('about_me.personal.topics')
 </script>
 
@@ -22,15 +22,51 @@ const topics = i18n.tm('about_me.personal.topics')
       </section>
       <section class="AboutMe__content flex flex-col lg:w-2/3 text-lg">
         <div class="reveal-container">
-          <h3 class="mb-4 font-bold" v-html="i18n.t('about_me.my_name')"></h3>
-          <div class="AboutMe__content__domains" v-html="i18n.t('about_me.domains')" />
+          <i18n-t keypath="about_me.my_name" tag="h3" class="mb-4 font-bold">
+            <template #name>
+              <span class="text-purple">{{ $t('about_me.short_name') }}</span>
+            </template>
+          </i18n-t>
+          <div class="AboutMe__content__domains">
+            <i18n-t keypath="about_me.domains">
+              <template #intro>
+                <p>
+                  <strong class="font-bold"> {{ $t('about_me.domains_intro') }} </strong>
+                </p>
+              </template>
+
+              <template #break>
+                <br />
+              </template>
+
+              <template #label>
+                <p>{{ $t('about_me.domains_label') }}</p>
+              </template>
+
+              <template #list>
+                <ul class="list-inside list-disc">
+                  <li v-for="item in $tm('about_me.domains_list')" :key="item">
+                    {{ $rt(item) }}
+                  </li>
+                </ul>
+              </template>
+            </i18n-t>
+          </div>
         </div>
 
-        <p class="reveal-container" v-html="i18n.t('about_me.where_skilled')"></p>
+        <i18n-t
+          class="reveal-container"
+          tag="p"
+          keypath="about_me.where_skilled"
+        ></i18n-t>
 
-        <p class="reveal-container" v-html="i18n.t('about_me.strong_side')"></p>
+        <i18n-t class="reveal-container" tag="p" keypath="about_me.strong_side" ></i18n-t>
 
-        <p class="reveal-container" v-html="i18n.t('about_me.education')"></p>
+        <i18n-t class="reveal-container" tag="p" keypath="about_me.education">
+          <template #note>
+            <span class="text-purple"> {{ $t('about_me.education_note') }} </span>
+          </template>
+        </i18n-t>
       </section>
     </div>
   </PageContainer>
