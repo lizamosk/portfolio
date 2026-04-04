@@ -9,19 +9,26 @@ import { ref } from 'vue'
 import { useDebouncedError } from '@/composables/useDebouncedError'
 import DOMPurify from 'dompurify'
 import emailjs from '@emailjs/browser'
+import { useI18n } from 'vue-i18n'
+
+const i18n = useI18n()
 
 const schema = yup.object({
   name: yup
     .string()
-    .required('Name is required')
-    .matches(/^(?!\s+$)[\p{L}\s]+$/u, 'Name must contain only letters'),
-  email: yup.string().required('Email is required').email('Wrong email format'),
-  message: yup.string().required('Message is required'),
+    .required(i18n.t('contact.error.name_required'))
+    .matches(/^(?!\s+$)[\p{L}\s]+$/u, i18n.t('contact.error.name_letters')),
+  email: yup
+    .string()
+    .required(i18n.t('contact.error.email_required'))
+    .email(i18n.t('contact.error.email_wrong')),
+  message: yup.string().required(i18n.t('contact.error.message_required')),
 })
 
 const { meta, handleSubmit, resetForm } = useForm({
   validationSchema: schema,
 })
+
 const { value: name, errorMessage: nameError, handleBlur: nameBlur } = useField<string>('name')
 
 const displayedNameError = useDebouncedError(nameError)
@@ -67,8 +74,8 @@ const onSubmit = handleSubmit(async (values) => {
     <PageContainer class="pb-12 snap-none">
       <div class="grid md:grid-cols-2 md:gap-8">
         <div>
-          <h2>Have some exciting projects to collaborate?</h2>
-          <p class="pb-3">Message me, and I will get back to you ASAP!</p>
+          <h2>{{ $t('contact.header') }}</h2>
+          <p class="pb-3">{{ $t('contact.message_me') }}</p>
           <CatImage class="hidden md:block" />
         </div>
         <section class="bg-sky-blue rounded-xl p-8 pb-10">
@@ -76,9 +83,9 @@ const onSubmit = handleSubmit(async (values) => {
             <div class="gap-1">
               <Input
                 v-model="name"
-                label="Name"
+                :label="i18n.t('contact.name_label')"
                 name="name"
-                placeholder="Please enter your name"
+                :placeholder="i18n.t('contact.name_placeholder')"
                 @blur="nameBlur"
               />
               <span v-if="displayedNameError" class="error"> {{ displayedNameError }}</span>
@@ -86,7 +93,7 @@ const onSubmit = handleSubmit(async (values) => {
             <div class="gap-1">
               <Input
                 v-model="email"
-                label="Email"
+                :label="i18n.t('contact.email_label')"
                 name="email"
                 placeholder="example@gmail.com"
                 type="email"
@@ -97,9 +104,9 @@ const onSubmit = handleSubmit(async (values) => {
             <div>
               <Input
                 v-model="message"
-                label="Your message"
+                :label="i18n.t('contact.message_label')"
                 name="message"
-                placeholder="Hi Liza, I would like to collaborate..."
+                :placeholder="i18n.t('contact.form_placeholder')"
                 textarea
                 @blur="messageBlur"
               />
@@ -112,7 +119,7 @@ const onSubmit = handleSubmit(async (values) => {
               native-type="submit"
               shine
             >
-              Send
+              {{ $t('contact.send_message') }}
             </Button>
           </form>
           <p v-if="displaySuccessMessage">{{ $t('contact.message_sent') }}</p>

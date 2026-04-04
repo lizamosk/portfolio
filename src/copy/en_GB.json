@@ -16,6 +16,16 @@
   },
   "about_me": {
     "header": "About me",
+    "my_name": "My name is E{name}veta Moskalenko.",
+    "short_name": "liza",
+    "domains": " {intro} {break} {label} {list} ",
+    "domains_intro": "Frontend Engineer with 5+ years of hands-on experience delivering robust and scalable web applications tailored to real-world user & business needs.",
+    "domains_label": "I’ve worked across different domains such as:",
+    "domains_list": ["Healthcare", "Cartography & maps", "Education"],
+    "where_skilled": "I’m skilled in modern JavaScript frameworks & libraries (Vue 3, React) and micro-frontend architecture, with a focus on page performance and clean code.",
+    "strong_side": "Strong cross-functional collaborator, comfortable working across product, design, and engineering to drive impactful solutions.",
+    "education": "I have a Bachelor's degree in Software engineering, certification in UI & UX design {note} and some teaching background: led practical classes on Object-Oriented Programming at the university level and private IT lessons for schoolchildren.",
+    "education_note": "(currently continue to learn it)",
     "personal": {
       "header": "Something personal...",
       "topics": [
@@ -31,119 +41,153 @@
       ]
     }
   },
-  "work_experience": [
-    {
-      "company": "ZAVA",
-      "icon": "zava",
-      "timeline": "May 2024 - Present",
-      "description": "",
-      "points": [
-        "Led the development of several client-facing micro-frontends from conception to production, that serve over 2 millions active customers per year",
-        "Collaborated with UI/UX designers and fellow frontend engineers to introduce and implement a new company-wide design system, significantly improving consistency, development velocity, and maintainability across multiple products",
-        "Engineered a modern document generation pipeline utilizing AWS Lambdas and Puppeteer, replacing an outdated system with a faster, more scalable, and technologically advanced solution",
-        "Developed and delivered a critical feature for the Operational team that directly addressed a key pain point, resulting in a quantifiable reduction of over 40 weekly alerts",
-        "Optimized website performance by implementing asset inlining strategies, analyzing bottlenecks and reducing overall site loading time by 30%, enhancing user experience",
-        "Proposed and implemented improvements to the code review process, streamlining workflows and increasing code review speed by 1-2 days, which accelerated feature delivery timelines",
-        "Implemented the Product selection micro-frontends (both admin and client-facing) - from architecture to code - which led to increasing conversion in the UK up to 15%",
-        "Designed and introduced new translations management process, including CLI library, which significantly improved development culture across all engineering squads"
-      ],
-      "role": "Senior Frontend Engineer",
-      "technologies": [
-        "Vue3",
-        "React",
-        "TypeScript",
-        "micro-frontends",
-        "singleSPA",
-        "Cypress",
-        "Jest",
-        "Figma",
-        "Sass",
-        "Vite"
-      ]
-    },
+  "work_experience": {
+    "header": "Work experience",
+    "places": [
+      {
+        "company": "ZAVA",
+        "icon": "zava",
+        "timeline": "May 2024 - Present",
+        "description": "",
+        "points": [
+          "Led the development of several client-facing micro-frontends from conception to production, that serve over 2 millions active customers per year",
+          "Collaborated with UI/UX designers and fellow frontend engineers to introduce and implement a new company-wide design system, significantly improving consistency, development velocity, and maintainability across multiple products",
+          "Engineered a modern document generation pipeline utilizing AWS Lambdas and Puppeteer, replacing an outdated system with a faster, more scalable, and technologically advanced solution",
+          "Developed and delivered a critical feature for the Operational team that directly addressed a key pain point, resulting in a quantifiable reduction of over 40 weekly alerts",
+          "Optimized website performance by implementing asset inlining strategies, analyzing bottlenecks and reducing overall site loading time by 30%, enhancing user experience",
+          "Proposed and implemented improvements to the code review process, streamlining workflows and increasing code review speed by 1-2 days, which accelerated feature delivery timelines",
+          "Implemented the Product selection micro-frontends (both admin and client-facing) - from architecture to code - which led to increasing conversion in the UK up to 15%",
+          "Designed and introduced new translations management process, including CLI library, which significantly improved development culture across all engineering squads"
+        ],
+        "role": "Senior Frontend Engineer",
+        "technologies": [
+          "Vue3",
+          "React",
+          "TypeScript",
+          "micro-frontends",
+          "singleSPA",
+          "Cypress",
+          "Jest",
+          "Figma",
+          "Sass",
+          "Vite"
+        ]
+      },
 
-    {
-      "company": "STC Ltd.",
-      "icon": "stc",
-      "timeline": "Jun 2022 - Apr 2024",
-      "description": "",
-      "points": [
-        "Collaborated with UI/UX team and migrated to a new design, following a pixel-perfect practice and resulting in a modernized and cohesive user experience",
-        "Reduced loading times of the UI components by 30% through the utilization of hooks, virtual lists and lazy loading",
-        "Introduced server-side rendering and efficient resource usage, enhancing scalability and optimizing website content",
-        "Introduced the Web Workers in the project which increased the speed of business logic by 30-40%",
-        "Improved the company’s engineering culture by presentation at the internal meetups and code reviewing",
-        "Actively participated in groomings and knowledge-sharing among team members"
-      ],
-      "role": "Frontend Web Developer",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Playwright",
-        "Jest",
-        "Redux",
-        "Webpack",
-        "Node.js",
-        "Neo4j",
-        "Material UI",
-        "Sass"
-      ]
-    },
+      {
+        "company": "STC Ltd.",
+        "icon": "stc",
+        "timeline": "Jun 2022 - Apr 2024",
+        "description": "",
+        "points": [
+          "Collaborated with UI/UX team and migrated to a new design, following a pixel-perfect practice and resulting in a modernized and cohesive user experience",
+          "Reduced loading times of the UI components by 30% through the utilization of hooks, virtual lists and lazy loading",
+          "Introduced server-side rendering and efficient resource usage, enhancing scalability and optimizing website content",
+          "Introduced the Web Workers in the project which increased the speed of business logic by 30-40%",
+          "Improved the company’s engineering culture by presentation at the internal meetups and code reviewing",
+          "Actively participated in groomings and knowledge-sharing among team members"
+        ],
+        "role": "Frontend Web Developer",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Playwright",
+          "Jest",
+          "Redux",
+          "Webpack",
+          "Node.js",
+          "Neo4j",
+          "Material UI",
+          "Sass"
+        ]
+      },
 
-    {
-      "company": "Netcracker Technology",
-      "icon": "netcracker",
-      "timeline": "Sep 2021 - May 2022",
-      "description": "",
-      "points": [
-        "Increased code coverage with unit and integration tests from 20% to 60% reducing the number of errors",
-        "Developed an internal library for collecting statistics from Kubernetes and cluster management which increased\ncode reusability"
-      ],
-      "role": "Software Engineer",
-      "technologies": ["Golang", "Java", "Spring Framework", "PostgreSQL", "Docker"]
-    },
+      {
+        "company": "Netcracker Technology",
+        "icon": "netcracker",
+        "timeline": "Sep 2021 - May 2022",
+        "description": "",
+        "points": [
+          "Increased code coverage with unit and integration tests from 20% to 60% reducing the number of errors",
+          "Developed an internal library for collecting statistics from Kubernetes and cluster management which increased\ncode reusability"
+        ],
+        "role": "Software Engineer",
+        "technologies": ["Golang", "Java", "Spring Framework", "PostgreSQL", "Docker"]
+      },
 
-    {
-      "company": "Saint Petersburg State Electrotechnical University \"LETI\"",
-      "icon": "leti",
-      "timeline": "Apr 2020 - Nov 2020",
-      "description": "",
-      "points": [
-        "Ensured a seamless experience across various devices by implementing responsive design principles, making the application accessible on desktops and mobile devices",
-        "Optimized image and fonts loading, improving site loading speed by up 20%",
-        "Implemented a library with dynamic UI components that adapt to various user roles"
-      ],
-      "role": "Frontend Developer",
-      "technologies": ["React", "Redux", "TypeScript", "CSS", "Jest"]
-    }
-  ],
-  "education": [
-    {
-      "place": "St Petersburg’s Electrotechnical University “LETI”",
-      "dates": "2019-2023",
-      "title": "Bachelor in Software Engineering",
-      "image": "images/education/diploma_leti.jpg"
-    },
-    {
-      "place": "Information Technologies, Mechanics and Optics University",
-      "dates": "2023-2024",
-      "title": "Qualification in UI/UX design",
-      "image": "images/education/ux_itmo.png"
-    },
-    {
-      "place": "Uxcel",
-      "dates": "2025",
-      "title": "Common Design Patterns",
-      "image": "images/education/design_patterns_uxcel.png"
-    },
-    {
-      "place": "Uxcel",
-      "dates": "2025",
-      "title": "UX Design Foundations",
-      "image": "images/education/ux_foundations_uxcel.png"
-    }
-  ],
+      {
+        "company": "Saint Petersburg State Electrotechnical University \"LETI\"",
+        "icon": "leti",
+        "timeline": "Apr 2020 - Nov 2020",
+        "description": "",
+        "points": [
+          "Ensured a seamless experience across various devices by implementing responsive design principles, making the application accessible on desktops and mobile devices",
+          "Optimized image and fonts loading, improving site loading speed by up 20%",
+          "Implemented a library with dynamic UI components that adapt to various user roles"
+        ],
+        "role": "Frontend Developer",
+        "technologies": ["React", "Redux", "TypeScript", "CSS", "Jest"]
+      }
+    ]
+  },
+  "education": {
+    "header": "Education",
+    "places": [
+      {
+        "place": "St Petersburg’s Electrotechnical University “LETI”",
+        "dates": "2019-2023",
+        "title": "Bachelor in Software Engineering",
+        "image": "images/education/diploma_leti.jpg"
+      },
+      {
+        "place": "Information Technologies, Mechanics and Optics University",
+        "dates": "2023-2024",
+        "title": "Qualification in UI/UX design",
+        "image": "images/education/ux_itmo.png"
+      },
+      {
+        "place": "Uxcel",
+        "dates": "2025",
+        "title": "Common Design Patterns",
+        "image": "images/education/design_patterns_uxcel.png"
+      },
+      {
+        "place": "Uxcel",
+        "dates": "2025",
+        "title": "UX Design Foundations",
+        "image": "images/education/ux_foundations_uxcel.png"
+      },
+      {
+        "place": "Uxcel",
+        "dates": "2026",
+        "title": "Introduction to Design Systems",
+        "image": "images/education/ds_uxcel.png"
+      }
+    ]
+  },
   "contact": {
-    "message_sent": "Amazing! Your message was sent."
+    "header": "Have some exciting projects to collaborate?",
+    "form_placeholder": "Hi Liza, I would like to collaborate...",
+    "name_placeholder": "Please enter your name",
+    "name_label": "Name",
+    "email_label": "Email",
+    "message_label": "Your message",
+    "message_me": "Message me, and I will get back to you ASAP!",
+    "send_message": "Send",
+    "message_sent": "Amazing! Your message was sent.",
+    "error": {
+      "name_required": "Name is required",
+      "name_letters": "Name must contain only letters",
+      "email_required": "Email is required",
+      "email_wrong": "Wrong email format",
+      "message_required": "Message is required"
+    }
+  },
+  "accordion": {
+    "more_info": "More info",
+    "less_info": "Less info"
+  },
+  "footer": {
+    "made_by_liza": "Made by Liza Moskalenko"
   }
 }

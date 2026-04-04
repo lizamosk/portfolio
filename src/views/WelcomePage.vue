@@ -39,20 +39,6 @@ onMounted(() => {
     duration: 3000,
     loop: true,
   })
-
-  // const target = document.querySelector('.scramble-text')!
-  // const { chars } = splitText(target as HTMLElement, {
-  //   chars: { wrap: true, includeSpaces: true },
-  // })
-  //
-  // animate(chars, {
-  //   y: [30, 0],
-  //   duration: 750,
-  //   ease: 'out(3)',
-  //   delay: stagger(100),
-  //   loop: false,
-  //   alternate: true,
-  // })
 })
 </script>
 

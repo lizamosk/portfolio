@@ -8,14 +8,14 @@ import EducationSlide from '@/components/EducationSlide.vue'
 
 const i18n = useI18n()
 const content: ComputedRef<Array<{ place: string; dates: string; title: string; image: string }>> =
-  computed(() => i18n.tm('education'))
+  computed(() => i18n.tm('education.places'))
 
 const isTablet = useIsTablet()
 </script>
 
 <template>
   <PageContainer>
-    <h2 class="reveal-container">Education</h2>
+    <h2 class="reveal-container">{{ $t('education.header') }}</h2>
     <Carousel
       :direction="isTablet ? 'vertical' : 'horizontal'"
       :slide-component="EducationSlide"

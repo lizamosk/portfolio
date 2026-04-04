@@ -3,6 +3,7 @@ import InstagramLogo from '@/assets/icons/social/instagram.svg'
 import LinkedinLogo from '@/assets/icons/social/linkedin.svg'
 import TelegramLogo from '@/assets/icons/social/telegram.svg'
 import { CV_PATH } from '@/contants'
+import { useI18n } from 'vue-i18n'
 
 const currentYear = new Date().getFullYear()
 </script>
@@ -12,7 +13,7 @@ const currentYear = new Date().getFullYear()
     class="footer-touch-safe-bottom text-white w-full grid-rows-[1fr_auto] bg-dust-blue grid grid-cols-3 align-baseline justify-between pb-4 pt-8 px-8 lg:px-20 xl:px-24"
   >
     <div class="flex flex-col gap-2">
-      <p class="flex">Made by Liza Moskalenko &#129653;</p>
+      <p class="flex">{{ $t('footer.made_by_liza') }} &#129653;</p>
       <a class="ActionLink light" rel="noreferrer noopener" target="_blank" :href="CV_PATH">
         {{ $t('navigation.cv') }}
       </a>
@@ -21,13 +22,13 @@ const currentYear = new Date().getFullYear()
     <div class="flex flex-col gap-4 col-start-3 items-end">
       <div class="flex gap-2 justify-start">
         <a href="https://t.me/limoskk" target="_blank">
-          <TelegramLogo class="ActionLink light"
+          <TelegramLogo alt="telegram" class="ActionLink light"
         /></a>
         <a href="https://www.linkedin.com/in/limoskk/" target="_blank">
-          <LinkedinLogo class="ActionLink light" />
+          <LinkedinLogo alt="linkedin" class="ActionLink light" />
         </a>
         <a href="https://www.instagram.com/limoskk/" target="_blank">
-          <InstagramLogo class="ActionLink light"
+          <InstagramLogo alt="instagram" class="ActionLink light"
         /></a>
       </div>
       <a
