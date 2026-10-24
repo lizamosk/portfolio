@@ -28,7 +28,17 @@ onMounted(() => {
   <PageContainer>
     <h2 class="reveal-container">{{ $t('work_experience.header') }}</h2>
     <div class="flex gap-10 flex-col lg:mx-40">
-      <WorkExperienceAccordion v-for="item in workData" class="reveal-container" v-bind="item" />
+      <WorkExperienceAccordion
+        v-for="(item, index) in workData"
+        :key="index"
+        class="reveal-container"
+        :company="item.company"
+        :timeline="item.timeline"
+        :role="item.role"
+        :description="item.description"
+        :icon="item.icon"
+        :points="item.points"
+        :technologies="item.technologies" />
     </div>
   </PageContainer>
 </template>

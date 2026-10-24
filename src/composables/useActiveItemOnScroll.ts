@@ -11,7 +11,7 @@ export function useActiveItemOnScroll(
   const activeEl = ref(null)
   const activeElIndex = ref<number>(0)
   let observer: IntersectionObserver | null = null
-  let visibleMap = new Map<HTMLElement, { ratio: number; index: number }>()
+  const visibleMap = new Map<HTMLElement, { ratio: number; index: number }>()
 
   onMounted(() => {
     const container = containerRef.value

@@ -26,11 +26,10 @@ const props = defineProps({
 })
 
 const containerRef = useTemplateRef('slides')
-const {
-  activeEl: activeSlide,
-  index: activeSlideIndex,
-  scrollToSlide,
-} = useActiveItemOnScroll(containerRef, '.Slide__container')
+const { index: activeSlideIndex, scrollToSlide } = useActiveItemOnScroll(
+  containerRef,
+  '.Slide__container'
+)
 
 const viewNextSlide = () => {
   if (activeSlideIndex.value === props.slides.length - 1) {

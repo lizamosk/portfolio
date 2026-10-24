@@ -14,7 +14,7 @@ const topics = i18n.tm('about_me.personal.topics')
       >
         <p class="italic text-xl mb-4">{{ $t('about_me.personal.header') }}</p>
         <div class="PersonalThings__items">
-          <div v-for="topic of topics" class="flex gap-1">
+          <div v-for="(topic, index) of topics" :key="index" class="flex gap-1">
             <span> {{ $rt(topic[0]) }} </span>
             <p>{{ $rt(topic[1]) }}</p>
           </div>

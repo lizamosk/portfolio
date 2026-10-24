@@ -3,7 +3,6 @@ import InstagramLogo from '@/assets/icons/social/instagram.svg'
 import LinkedinLogo from '@/assets/icons/social/linkedin.svg'
 import TelegramLogo from '@/assets/icons/social/telegram.svg'
 import { CV_PATH } from '@/contants'
-import { useI18n } from 'vue-i18n'
 
 const currentYear = new Date().getFullYear()
 </script>

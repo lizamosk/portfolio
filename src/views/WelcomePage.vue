@@ -52,13 +52,13 @@ onMounted(() => {
           <span> {{ $t('intro.header.role') }} </span
           ><span class="scramble-text">{{ $t('intro.header.role2') }} </span>
           <br />
-          <div class="flex">
+          <span class="flex">
             <span class="whitespace-nowrap"> {{ $t('intro.header.of_your') }} </span>
-            <div class="relative">
+            <span class="relative">
               <PencilShapeSvg class="absolute top-[-15px] md:top-[-5px] md:w-[240px]" />
               <span>&nbsp;{{ $t('intro.header.dreams') }} </span>
-            </div>
-          </div>
+            </span>
+          </span>
         </h1>
 
         <div class="flex flex-col gap-6 min-w-2xs max-w-80">
@@ -74,8 +74,11 @@ onMounted(() => {
           >
             {{ $t('intro.contact_me') }}
           </Button>
-          <Button class="px-16 transition-transform duration-300 hover:scale-105" type="outlined"
-          @click="downloadCV">
+          <Button
+            class="px-16 transition-transform duration-300 hover:scale-105"
+            type="outlined"
+            @click="downloadCV"
+          >
             {{ $t('intro.download_cv') }}
           </Button>
         </div>

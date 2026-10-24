@@ -35,7 +35,7 @@ onMounted(() => {
         <p class="font-semibold font-20 mt-4 mb-2">{{ role }}</p>
         <p>{{ technologies.join(', ') }}</p>
         <div v-if="techIconsUrls.length > 0" class="flex gap-2 mt-3">
-          <img v-for="image in techIconsUrls" :alt="image.name" :src="image.url" />
+          <img v-for="image in techIconsUrls" :key="image.name" :alt="image.name" :src="image.url" />
         </div>
       </section>
     </template>

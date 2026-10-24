@@ -40,7 +40,8 @@ body {
 #main-container {
   /*height: calc(100dvh - 78px);*/
   /*overflow-y: scroll;*/
-  @media (min-width: var(--tablet)) {
+  /* Large screens only (Tailwind xl): on narrower screens this squeezes the sections */
+  @media (min-width: 1280px) {
     padding-left: 4rem;
     padding-right: 4rem;
   }

@@ -47,7 +47,7 @@ const onSubmit = handleSubmit(async (values) => {
   try {
     submitInProcess.value = true
     const sanitizedMessage = DOMPurify.sanitize(values.message)
-    const response = await emailjs
+    await emailjs
       .send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_CONTACT_US_ID, {
         ...values,
         message: sanitizedMessage,
