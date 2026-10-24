@@ -1,29 +1,47 @@
-# portfolio
+# Liza Moskalenko — Frontend Engineer Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+A single-page personal website that presents my professional work experience as a Frontend Engineer: roles and achievements, technologies used, education and certifications, and a contact form for collaboration.
 
-## Recommended IDE Setup
+## What's on the site
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Welcome** — introduction, a "Contact me" button and a downloadable CV.
+- **About me** — background, domains I've worked in (healthcare, cartography & maps, education), core skills and a few personal facts.
+- **Work experience** — an accordion of roles with company logos, timelines, key achievements and technology badges.
+- **Education** — degrees, UI/UX qualification and certifications, with diploma images.
+- **Contact** — a validated form that sends messages straight to my inbox.
 
-## Customize configuration
+Sections reveal with a subtle scroll animation, and the layout adapts to phones, tablets and desktops.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Tech stack
 
-## Project Setup
+- [Vue 3](https://vuejs.org/) (`<script setup>`) with [TypeScript](https://www.typescriptlang.org/) and [Vite](https://vite.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling, with brand colours defined as CSS variables
+- [vue-i18n](https://vue-i18n.intlify.dev/) for all user-facing copy and structured content
+- [vee-validate](https://vee-validate.logaski.com/) + [yup](https://github.com/jquense/yup) for form validation
+- [DOMPurify](https://github.com/cure53/DOMPurify) to sanitise contact-form messages
+- [EmailJS](https://www.emailjs.com/) to deliver contact-form messages
+- [anime.js](https://animejs.com/) for scroll-reveal animations
+- [vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader) for SVGs as Vue components
+- ESLint (flat config) and Prettier for code quality
+
+## Getting started
+
+Requires Node.js 20 or newer (see `.nvmrc`).
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Updating the content
 
-```sh
-npm run dev
-```
+Most of the text on the site lives in [`src/copy/en_GB.json`](src/copy/en_GB.json). To update my experience, education or personal details, edit that file rather than the components:
 
-### Compile and Minify for Production
+- `work_experience.places` — companies, roles, timelines, achievements and technologies. Company logos are looked up by the `icon` name under `src/assets/images/logos/`.
+- `education.places` — qualifications and their diploma images (stored under `src/assets/images/education/`).
+- `about_me`, `intro`, `contact` — biography, headline and form copy.
 
-```sh
-npm run build
-```
+To replace the CV, put the new PDF in `public/` under the same name, or update `CV_PATH` in `src/contants.ts` to point to the new file.
+
+## Deployment
+
+Run `npm run build` and deploy the generated `dist/` folder to any static hosting provider.
