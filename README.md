@@ -45,3 +45,7 @@ To replace the CV, put the new PDF in `public/` under the same name, or update `
 ## Deployment
 
 Run `npm run build` and deploy the generated `dist/` folder to any static hosting provider.
+
+### Environment variables
+
+The contact form uses EmailJS. Copy `.env.example` to `.env` and fill in `VITE_EMAILJS_PUBLIC_KEY`, `VITE_EMAILJS_SERVICE_ID` and `VITE_EMAILJS_CONTACT_US_ID`. `.env` is git-ignored. In production, set the same variables in Cloudflare Pages (Settings → Variables and Secrets).
