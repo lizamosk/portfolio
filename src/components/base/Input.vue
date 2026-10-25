@@ -3,8 +3,8 @@ defineProps<{
   label?: string
   placeholder?: string
   type?: string
-  textarea?: boolean,
-  modelValue?: string,
+  textarea?: boolean
+  modelValue?: string
   name?: string
 }>()
 

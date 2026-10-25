@@ -1,114 +1,119 @@
 :root {
-    --font-family-nunito-sans-variable-url: url('@/assets/fonts/NunitoSans-VariableFont.ttf');
-    --font-family-nunito-sans-format: 'truetype';
+  --font-family-nunito-sans-variable-url: url('@/assets/fonts/NunitoSans-VariableFont.ttf');
+  --font-family-nunito-sans-format: 'truetype';
 
-    --font-family-andika-regular-url: url('@/assets/fonts/Andika-Regular.ttf');
-    --font-family-andika-bold-url: url('@/assets/fonts/Andika-Bold.ttf');
-    --font-family-andika-format: 'truetype';
+  --font-family-andika-regular-url: url('@/assets/fonts/Andika-Regular.ttf');
+  --font-family-andika-bold-url: url('@/assets/fonts/Andika-Bold.ttf');
+  --font-family-andika-format: 'truetype';
 }
 
 @font-face {
-    font-family: 'Nunito Sans';
-    font-display: fallback;
-    src: var(--font-family-nunito-sans-variable-url);
-    font-weight: 300 800;
-    font-style: normal;
+  font-family: 'Nunito Sans';
+  font-display: fallback;
+  src: var(--font-family-nunito-sans-variable-url);
+  font-weight: 300 800;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Andika';
-    font-display: fallback;
-    src: var(--font-family-andika-regular-url) format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Andika';
+  font-display: fallback;
+  src: var(--font-family-andika-regular-url) format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Andika';
-    font-display: fallback;
-    src: var(--font-family-andika-bold-url) format('truetype');
-    font-weight: 700;
+  font-family: 'Andika';
+  font-display: fallback;
+  src: var(--font-family-andika-bold-url) format('truetype');
+  font-weight: 700;
 }
 
 :root {
+  h1 {
+    font:
+      700 40px/140% 'Andika',
+      sans-serif;
+  }
+
+  h2 {
+    font:
+      400 28px/130% 'Nunito Sans',
+      sans-serif;
+  }
+
+  @media (max-width: 768px) {
     h1 {
-        font: 700 40px/140% 'Andika',
+      font:
+        700 28px/140% 'Andika',
         sans-serif;
     }
-
     h2 {
-        font: 400 28px/130% 'Nunito Sans',
+      font:
+        400 24px/130% 'Nunito Sans',
         sans-serif;
     }
+  }
 
-    @media (max-width: 768px) {
-        h1 {
-            font: 700 28px/140% 'Andika',
-            sans-serif;
-        }
-        h2 {
-            font: 400 24px/130% 'Nunito Sans',
-            sans-serif;
-        }
-    }
+  h3 {
+    font:
+      400 20px/130% 'Nunito Sans',
+      sans-serif;
+  }
 
-    h3 {
-        font: 400 20px/130% 'Nunito Sans',
-        sans-serif;
-    }
+  .font-light {
+    font-weight: 300 !important;
+  }
 
-    .font-light {
-        font-weight: 300 !important;
-    }
+  .font-bold {
+    font-weight: 700 !important;
+  }
 
-    .font-bold {
-        font-weight: 700 !important;
-    }
+  .font-semibold {
+    font-weight: 600 !important;
+  }
 
-    .font-semibold {
-        font-weight: 600 !important;
-    }
+  .font-24 {
+    font-size: 24px;
+  }
 
-    .font-24 {
-        font-size: 24px;
-    }
+  .font-22 {
+    font-size: 22px;
+  }
 
-    .font-22 {
-        font-size: 22px;
-    }
+  .font-20 {
+    font-size: 20px;
+  }
 
-    .font-20 {
-        font-size: 20px;
+  span {
+    &.error {
+      color: var(--error-dark);
     }
-
-    span {
-        &.error {
-            color: var(--error-dark);
-        }
-    }
+  }
 }
 
 .ActionLink {
-    cursor: pointer;
-    color: var(--primary-dark);
+  cursor: pointer;
+  color: var(--primary-dark);
+
+  &:hover {
+    color: var(--dust-blue);
+  }
+
+  &:active {
+    color: var(--brand-blue-2);
+  }
+
+  &.light {
+    color: white;
 
     &:hover {
-        color: var(--dust-blue)
+      color: var(--sky-blue);
     }
 
     &:active {
-        color: var(--brand-blue-2);
+      color: var(--sky-blue-darker);
     }
-
-    &.light {
-        color: white;
-
-        &:hover {
-            color: var(--sky-blue)
-        }
-
-        &:active {
-            color: var(--sky-blue-darker);
-        }
-    }
+  }
 }

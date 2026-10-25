@@ -1,15 +1,15 @@
 .icon {
-    cursor: pointer;
+  cursor: pointer;
 
-    &.primary {
-        color: var(--sky-blue-darker);
+  &.primary {
+    color: var(--sky-blue-darker);
 
-        &:hover {
-            color: var(--dust-blue)
-        }
-
-        &:active {
-            color: var(--brand-blue)
-        }
+    &:hover {
+      color: var(--dust-blue);
     }
+
+    &:active {
+      color: var(--brand-blue);
+    }
+  }
 }

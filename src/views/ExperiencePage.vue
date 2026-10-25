@@ -38,7 +38,8 @@ onMounted(() => {
         :description="item.description"
         :icon="item.icon"
         :points="item.points"
-        :technologies="item.technologies" />
+        :technologies="item.technologies"
+      />
     </div>
   </PageContainer>
 </template>

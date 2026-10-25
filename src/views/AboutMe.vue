@@ -54,13 +54,9 @@ const topics = i18n.tm('about_me.personal.topics')
           </div>
         </div>
 
-        <i18n-t
-          class="reveal-container"
-          tag="p"
-          keypath="about_me.where_skilled"
-        ></i18n-t>
+        <i18n-t class="reveal-container" tag="p" keypath="about_me.where_skilled"></i18n-t>
 
-        <i18n-t class="reveal-container" tag="p" keypath="about_me.strong_side" ></i18n-t>
+        <i18n-t class="reveal-container" tag="p" keypath="about_me.strong_side"></i18n-t>
 
         <i18n-t class="reveal-container" tag="p" keypath="about_me.education">
           <template #note>

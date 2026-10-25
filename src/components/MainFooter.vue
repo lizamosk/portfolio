@@ -20,13 +20,13 @@ const currentYear = new Date().getFullYear()
     <span class="row-start-2 col-start-2 text-center pt-3 pb-4"> {{ currentYear }}</span>
     <div class="flex flex-col gap-4 col-start-3 items-end">
       <div class="flex gap-2 justify-start">
-        <a href="https://t.me/limoskk" target="_blank">
+        <a href="https://t.me/limoskk" target="_blank" aria-label="Telegram">
           <TelegramLogo alt="telegram" class="ActionLink light"
         /></a>
-        <a href="https://www.linkedin.com/in/limoskk/" target="_blank">
+        <a href="https://www.linkedin.com/in/limoskk/" target="_blank" aria-label="Linkedin">
           <LinkedinLogo alt="linkedin" class="ActionLink light" />
         </a>
-        <a href="https://www.instagram.com/limoskk/" target="_blank">
+        <a href="https://www.instagram.com/limoskk/" target="_blank" aria-label="Instagram">
           <InstagramLogo alt="instagram" class="ActionLink light"
         /></a>
       </div>

@@ -5,7 +5,12 @@ import { scrollToNextPage } from '@/util/scroll'
 
 <template>
   <div class="flex justify-center">
-    <button class="flex justify-center" @click="scrollToNextPage">
+    <button
+      class="flex justify-center"
+      aria-label="Scroll to Next"
+      title="Scroll to Next"
+      @click="scrollToNextPage"
+    >
       <ScrollDownButtonIcon class="bounce-out-down fixed bottom-10" />
     </button>
   </div>

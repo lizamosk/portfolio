@@ -1,11 +1,13 @@
 .BasicInput {
-    min-height: 44px;
-    outline: none;
-    border: 2px solid transparent;
-    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease;
+  min-height: 44px;
+  outline: none;
+  border: 2px solid transparent;
+  transition:
+    box-shadow 0.3s ease-in-out,
+    border-color 0.3s ease;
 
-    &:hover  {
-        border: 2px solid var(--brand-blue);
-        box-shadow: 1px 1px 1px 0 var(--dust-blue);
-    }
+  &:hover {
+    border: 2px solid var(--brand-blue);
+    box-shadow: 1px 1px 1px 0 var(--dust-blue);
+  }
 }
