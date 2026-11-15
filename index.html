@@ -18,7 +18,26 @@
       property="og:description"
       content="Liza Moskalenko - an experienced Spain-based Frontend Engineer with degree in Software Engineering, building modern and performant web applications."
     />
-    <meta name="theme-color" content="#d8d8d8">
+    <meta name="theme-color" content="#eef3f6">
+    <meta name="color-scheme" content="light dark">
+    <script>
+      // Set the theme before first paint (no flash). Keep in sync with src/composables/useTheme.ts
+      ;(function () {
+        var theme = 'light'
+        try {
+          var stored = localStorage.getItem('theme')
+          theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme)
+        var meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#1b3c53' : '#eef3f6')
+      })()
+    </script>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script type="application/ld+json">

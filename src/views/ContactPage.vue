@@ -78,39 +78,53 @@ const onSubmit = handleSubmit(async (values) => {
           <p class="pb-3">{{ $t('contact.message_me') }}</p>
           <CatImage class="hidden md:block" />
         </div>
-        <section class="bg-sky-blue rounded-xl p-8 pb-10">
+        <section class="bg-tint border border-line rounded-xl p-8 pb-10">
           <form class="ContactForm flex-col flex gap-3" @submit.prevent="onSubmit">
             <div class="gap-1">
               <Input
                 v-model="name"
                 :label="i18n.t('contact.name_label')"
                 name="name"
+                autocomplete="name"
+                :invalid="!!displayedNameError"
+                :describedby="displayedNameError ? 'name-error' : undefined"
                 :placeholder="i18n.t('contact.name_placeholder')"
                 @blur="nameBlur"
               />
-              <span v-if="displayedNameError" class="error"> {{ displayedNameError }}</span>
+              <span v-if="displayedNameError" id="name-error" class="error" role="alert">
+                {{ displayedNameError }}</span
+              >
             </div>
             <div class="gap-1">
               <Input
                 v-model="email"
                 :label="i18n.t('contact.email_label')"
                 name="email"
+                autocomplete="email"
+                :invalid="!!displayedEmailError"
+                :describedby="displayedEmailError ? 'email-error' : undefined"
                 placeholder="example@gmail.com"
                 type="email"
                 @blur="emailBlur"
               />
-              <span v-if="displayedEmailError" class="error"> {{ displayedEmailError }}</span>
+              <span v-if="displayedEmailError" id="email-error" class="error" role="alert">
+                {{ displayedEmailError }}</span
+              >
             </div>
             <div>
               <Input
                 v-model="message"
                 :label="i18n.t('contact.message_label')"
                 name="message"
+                :invalid="!!displayedMessageError"
+                :describedby="displayedMessageError ? 'message-error' : undefined"
                 :placeholder="i18n.t('contact.form_placeholder')"
                 textarea
                 @blur="messageBlur"
               />
-              <span v-if="displayedMessageError" class="error"> {{ displayedMessageError }}</span>
+              <span v-if="displayedMessageError" id="message-error" class="error" role="alert">
+                {{ displayedMessageError }}</span
+              >
             </div>
             <Button
               :disabled="!meta.valid || submitInProcess || displaySuccessMessage"
@@ -122,7 +136,9 @@ const onSubmit = handleSubmit(async (values) => {
               {{ $t('contact.send_message') }}
             </Button>
           </form>
-          <p v-if="displaySuccessMessage">{{ $t('contact.message_sent') }}</p>
+          <p v-if="displaySuccessMessage" class="text-strong font-semibold" role="status">
+            {{ $t('contact.message_sent') }}
+          </p>
         </section>
       </div>
     </PageContainer>

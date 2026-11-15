@@ -1,10 +1,11 @@
+@import '@fontsource-variable/bricolage-grotesque';
+/* Bricolage Grotesque has no Cyrillic; Onest is the display fallback for the Russian locale.
+   Both are unicode-range split, so a script's file only downloads when it is actually used. */
+@import '@fontsource-variable/onest';
+
 :root {
   --font-family-nunito-sans-variable-url: url('@/assets/fonts/NunitoSans-VariableFont.ttf');
-  --font-family-nunito-sans-format: 'truetype';
-
-  --font-family-andika-regular-url: url('@/assets/fonts/Andika-Regular.ttf');
-  --font-family-andika-bold-url: url('@/assets/fonts/Andika-Bold.ttf');
-  --font-family-andika-format: 'truetype';
+  --font-display: 'Bricolage Grotesque Variable', 'Onest Variable', 'Nunito Sans', sans-serif;
 }
 
 @font-face {
@@ -15,105 +16,120 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Andika';
-  font-display: fallback;
-  src: var(--font-family-andika-regular-url) format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Andika';
-  font-display: fallback;
-  src: var(--font-family-andika-bold-url) format('truetype');
-  font-weight: 700;
-}
-
+/* Scoped under :root so these beat Tailwind preflight's h1–h3 resets */
 :root {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--text-strong);
+  }
+
   h1 {
-    font:
-      700 40px/140% 'Andika',
-      sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
   }
 
-  h2 {
-    font:
-      400 28px/130% 'Nunito Sans',
-      sans-serif;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font:
-        700 28px/140% 'Andika',
-        sans-serif;
-    }
-    h2 {
-      font:
-        400 24px/130% 'Nunito Sans',
-        sans-serif;
-    }
+  h2,
+  .Greeting {
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 
   h3 {
-    font:
-      400 20px/130% 'Nunito Sans',
-      sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.3;
   }
 
-  .font-light {
-    font-weight: 300 !important;
-  }
-
-  .font-bold {
-    font-weight: 700 !important;
-  }
-
-  .font-semibold {
-    font-weight: 600 !important;
-  }
-
-  .font-24 {
-    font-size: 24px;
-  }
-
-  .font-22 {
-    font-size: 22px;
-  }
-
-  .font-20 {
-    font-size: 20px;
-  }
-
-  span {
-    &.error {
-      color: var(--error-dark);
+  @media (max-width: 768px) {
+    h2,
+    .Greeting {
+      font-size: 1.5rem;
     }
+  }
+}
+
+.Greeting {
+  font-family: var(--font-display);
+  color: var(--accent);
+}
+
+.font-light {
+  font-weight: 300 !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.font-semibold {
+  font-weight: 600 !important;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+/* Errors: icon + text, never colour alone */
+span.error {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  margin-top: 0.25rem;
+  color: var(--error);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.4;
+
+  &::before {
+    content: '⚠';
+    content: '⚠' / '';
+    flex: none;
   }
 }
 
 .ActionLink {
   cursor: pointer;
-  color: var(--primary-dark);
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
 
   &:hover {
-    color: var(--dust-blue);
+    color: var(--accent-hover);
+    text-decoration-thickness: 2px;
   }
 
   &:active {
-    color: var(--brand-blue-2);
+    color: var(--accent-solid-active);
   }
 
   &.light {
-    color: white;
+    color: var(--on-footer);
 
     &:hover {
-      color: var(--sky-blue);
+      color: var(--footer-hover);
     }
 
     &:active {
-      color: var(--sky-blue-darker);
+      color: var(--footer-hover);
     }
   }
 }

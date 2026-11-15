@@ -2,7 +2,7 @@
 import Button from '@/components/base/Button.vue'
 import ScrollDownButton from '@/components/ScrollDownButton.vue'
 import PageContainer from '@/components/base/PageContainer.vue'
-import { onMounted, useTemplateRef } from 'vue'
+import { onMounted, ref, useTemplateRef } from 'vue'
 import { useElementVisibility, useIntersectionObserver } from '@vueuse/core'
 import PencilShapeSvg from '@/assets/icons/vector/pencil-shape.svg'
 import { animate, svg } from 'animejs'
@@ -12,6 +12,24 @@ import { downloadCV } from '@/util/cv'
 const pageRef = useTemplateRef<HTMLElement>('page')
 const isPageVisible = useElementVisibility(pageRef)
 const videoPlayer = useTemplateRef<HTMLVideoElement>('videoPlayer')
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const isVideoPlaying = ref(false)
+// Once the visitor pauses the video, scrolling must not restart it behind their back.
+const pausedByUser = ref(prefersReducedMotion)
+
+const toggleVideo = () => {
+  const video = videoPlayer.value
+  if (!video) {
+    return
+  }
+  if (video.paused) {
+    pausedByUser.value = false
+    void video.play()
+  } else {
+    pausedByUser.value = true
+    video.pause()
+  }
+}
 
 const emit = defineEmits<{
   (e: 'contact:click'): void
@@ -24,7 +42,9 @@ useIntersectionObserver(
       return
     }
     if (isIntersecting) {
-      videoPlayer.value.play()
+      if (!pausedByUser.value) {
+        void videoPlayer.value.play()
+      }
     } else {
       videoPlayer.value.pause()
     }
@@ -33,6 +53,10 @@ useIntersectionObserver(
 )
 
 onMounted(() => {
+  // Reduced motion: leave the pencil circle fully drawn instead of looping it
+  if (prefersReducedMotion) {
+    return
+  }
   animate(svg.createDrawable('.pencil-shape-path'), {
     draw: '0 1',
     ease: 'linear',
@@ -46,17 +70,22 @@ onMounted(() => {
   <PageContainer class="reveal-container">
     <div ref="page" class="flex flex-col lg:flex-row gap-8 md:gap-16">
       <div class="Welcome-column">
-        <h2 class="has-text-brand-blue md:mb-12">{{ $t('intro.greeting') }}</h2>
+        <p class="Greeting mb-5 md:mb-12">{{ $t('intro.greeting') }}</p>
 
-        <h1 class="tracking-widest mb-6 md:mb-12">
+        <h1 class="mb-6 md:mb-12">
           <span> {{ $t('intro.header.role') }} </span
           ><span class="scramble-text">{{ $t('intro.header.role2') }} </span>
           <br />
-          <span class="flex">
+          <span class="flex mt-2">
             <span class="whitespace-nowrap"> {{ $t('intro.header.of_your') }} </span>
+            <span>&nbsp;</span>
+            <!-- The circle is sized from the word itself, so it fits any language/font size -->
             <span class="relative">
-              <PencilShapeSvg class="absolute top-[-15px] md:top-[-5px] md:w-[240px]" />
-              <span>&nbsp;{{ $t('intro.header.dreams') }} </span>
+              <PencilShapeSvg
+                aria-hidden="true"
+                class="pointer-events-none absolute -left-2 -top-2 h-[calc(100%+1rem)] w-[calc(120%+1.5rem)] overflow-visible text-accent"
+              />
+              <span class="ml-1">{{ $t('intro.header.dreams') }} </span>
             </span>
           </span>
         </h1>
@@ -83,7 +112,7 @@ onMounted(() => {
           </Button>
         </div>
       </div>
-      <div class="Welcome-column video-wrapper w-fit self-center">
+      <div class="Welcome-column video-wrapper relative w-fit self-center">
         <video
           ref="videoPlayer"
           class="rounded-3xl max-h-[40rem]"
@@ -92,7 +121,31 @@ onMounted(() => {
           playsinline
           preload="auto"
           :src="welcomeVideo"
+          @pause="isVideoPlaying = false"
+          @play="isVideoPlaying = true"
         />
+        <button
+          :aria-label="isVideoPlaying ? $t('a11y.pause_video') : $t('a11y.play_video')"
+          class="absolute bottom-3 right-3 flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-strong shadow-md"
+          type="button"
+          @click="toggleVideo"
+        >
+          <svg
+            v-if="isVideoPlaying"
+            aria-hidden="true"
+            class="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <rect height="14" rx="1" width="4.5" x="5" y="5" />
+            <rect height="14" rx="1" width="4.5" x="14.5" y="5" />
+          </svg>
+          <svg v-else aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
     <ScrollDownButton v-if="isPageVisible" />

@@ -1,13 +1,31 @@
 .BasicInput {
   min-height: 44px;
-  outline: none;
-  border: 2px solid transparent;
+  margin-top: 0.25rem;
+  width: 100%;
+  color: var(--text-strong);
+  background: var(--field-bg);
+  /* visible boundary: WCAG 1.4.11 needs 3:1 against the surrounding panel */
+  border: 2px solid var(--ui-border);
   transition:
-    box-shadow 0.3s ease-in-out,
-    border-color 0.3s ease;
+    box-shadow 0.2s ease-in-out,
+    border-color 0.2s ease;
+
+  &::placeholder {
+    color: var(--muted);
+    opacity: 1;
+  }
 
   &:hover {
-    border: 2px solid var(--brand-blue);
-    box-shadow: 1px 1px 1px 0 var(--dust-blue);
+    border-color: var(--accent);
+  }
+
+  &:focus-visible {
+    border-color: var(--accent);
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  &[aria-invalid='true'] {
+    border-color: var(--error);
   }
 }
