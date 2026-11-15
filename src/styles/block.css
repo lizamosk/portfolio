@@ -1,5 +1,6 @@
 .NavBar {
-  background: inherit;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
   z-index: 100;
   top: env(safe-area-inset-top);
 }
@@ -10,7 +11,7 @@ a {
 
 .Page__wrapper {
   /*&:nth-child(even) {*/
-  /*  background: var(--neutral-grey);*/
+  /*  background: var(--bg);*/
   /*}*/
 
   .Page {
@@ -91,9 +92,7 @@ a {
     }
 
     .Slide {
-      box-shadow:
-        rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      box-shadow: var(--shadow);
       transform: scale(1);
       transition:
         transform 300ms ease,
@@ -172,8 +171,8 @@ a {
   overflow: hidden;
   /* A shadow that feels like light leaking from the video */
   box-shadow:
-    0 10px 30px -10px rgba(0, 0, 0, 0.3),
-    0 20px 40px rgba(85, 133, 181, 0.2);
+    var(--shadow),
+    0 20px 40px var(--glow);
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   will-change: transform;
   -webkit-backface-visibility: hidden;
@@ -183,7 +182,9 @@ a {
 @media (hover: hover) {
   .video-wrapper:hover {
     transform: scale(1.04) translateY(-5px);
-    box-shadow: 0 30px 60px rgba(85, 133, 181, 0.4);
+    box-shadow:
+      var(--shadow-lifted),
+      0 30px 60px var(--glow);
   }
 }
 
@@ -191,6 +192,17 @@ a {
 @media (hover: none) {
   .video-wrapper:active {
     transform: scale(0.96); /* Feels like a button press */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow);
   }
+}
+
+.Slide__imageButton {
+  display: block;
+  cursor: zoom-in;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.Slides .Slide__container:not(.Slide__container--active) .Slide__imageButton {
+  pointer-events: none;
 }

@@ -146,6 +146,12 @@
         "image": "images/education/ux_itmo.png"
       },
       {
+        "place": "Master.dev",
+        "dates": "2026",
+        "title": "Claude Code",
+        "image": "images/education/claude-code-masterdev.png"
+      },
+      {
         "place": "Uxcel",
         "dates": "2025",
         "title": "Common Design Patterns",
@@ -189,5 +195,15 @@
   },
   "footer": {
     "made_by_liza": "Made by Liza Moskalenko"
+  },
+  "a11y": {
+    "logo_link": "Liza Moskalenko, back to top",
+    "theme_switch": "Dark theme",
+    "previous_slide": "Previous slide",
+    "next_slide": "Next slide",
+    "slides_region": "Education certificates",
+    "enlarge_image": "Enlarge image",
+    "pause_video": "Pause video",
+    "play_video": "Play video"
   }
 }

@@ -10,8 +10,6 @@
   50% {
     transform: scale(1);
     opacity: 1;
-    fill: white;
-    stroke: white;
   }
   to {
     transform: scale(0.8);

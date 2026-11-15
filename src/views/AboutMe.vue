@@ -10,7 +10,7 @@ const topics = i18n.tm('about_me.personal.topics')
     <h2 class="reveal-container">{{ $t('about_me.header') }}</h2>
     <div class="flex sm:flex-row flex-col gap-10 md:gap-20 lg:mx-20 justify-center">
       <section
-        class="PersonalThings reveal-container lg:w-1/3 py-4 px-6 text-white rounded-2xl bg-dust-blue border-4 border-white"
+        class="PersonalThings reveal-container lg:w-1/3 py-4 px-6 text-on-feature rounded-2xl bg-feature border-4 border-surface shadow-[var(--shadow)]"
       >
         <p class="italic text-xl mb-4">{{ $t('about_me.personal.header') }}</p>
         <div class="PersonalThings__items">
@@ -24,7 +24,7 @@ const topics = i18n.tm('about_me.personal.topics')
         <div class="reveal-container">
           <i18n-t keypath="about_me.my_name" tag="h3" class="mb-4 font-bold">
             <template #name>
-              <span class="text-purple">{{ $t('about_me.short_name') }}</span>
+              <span class="text-highlight">{{ $t('about_me.short_name') }}</span>
             </template>
           </i18n-t>
           <div class="AboutMe__content__domains">
@@ -60,7 +60,7 @@ const topics = i18n.tm('about_me.personal.topics')
 
         <i18n-t class="reveal-container" tag="p" keypath="about_me.education">
           <template #note>
-            <span class="text-purple"> {{ $t('about_me.education_note') }} </span>
+            <span class="text-highlight"> {{ $t('about_me.education_note') }} </span>
           </template>
         </i18n-t>
       </section>

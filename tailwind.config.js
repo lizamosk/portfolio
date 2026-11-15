@@ -1,52 +1,51 @@
 // tailwind.config.js
-/** @type {import('tailwindcss').Config} */ // Это хорошая практика для автодополнения
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: true,
-  plugins: [], // or 'media' or 'class'
+  darkMode: ['selector', '[data-theme="dark"]'],
+  plugins: [],
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      // All colours are semantic tokens defined in src/styles/vars/color.css
+      // and swap automatically with the theme.
       colors: {
-        purple: {
-          DEFAULT: 'var(--purple)',
-        },
-        'neutral-base': {
-          DEFAULT: 'var(--neutral-base)',
-        },
-        'neutral-base-darker': {
-          DEFAULT: 'var(--neutral-base-darker)',
-        },
-        'neutral-grey': {
-          DEFAULT: 'var(--neutral-grey)',
-        },
-        'brand-blue': {
-          DEFAULT: 'var(--brand-blue)',
-        },
-        'brand-blue-2': {
-          DEFAULT: 'var(--brand-blue-2)',
-        },
-        'dust-blue': {
-          DEFAULT: 'var(--dust-blue)',
-        },
-        'primary-dark': {
-          DEFAULT: 'var(--primary-dark)',
-        },
-        'sky-blue': {
-          DEFAULT: 'var(--sky-blue)',
-        },
-        'error-red': {
-          DEFAULT: 'var(--error-red)',
-        },
-        'error-dark': {
-          DEFAULT: 'var(--error-dark)',
-        },
+        page: 'var(--bg)',
+        surface: 'var(--surface)',
+        tint: 'var(--tint)',
+        field: 'var(--field-bg)',
+        feature: 'var(--feature)',
+        'on-feature': 'var(--on-feature)',
+        'site-footer': 'var(--footer)',
+        'on-footer': 'var(--on-footer)',
+        strong: 'var(--text-strong)',
+        body: 'var(--text)',
+        muted: 'var(--muted)',
+        accent: 'var(--accent)',
+        'accent-hover': 'var(--accent-hover)',
+        'accent-solid': 'var(--accent-solid)',
+        'accent-solid-hover': 'var(--accent-solid-hover)',
+        'accent-solid-active': 'var(--accent-solid-active)',
+        'on-accent': 'var(--on-accent)',
+        highlight: 'var(--highlight)',
+        line: 'var(--border)',
+        'ui-line': 'var(--ui-border)',
+        focus: 'var(--focus)',
+        danger: 'var(--error)',
+        chip: 'var(--chip)',
       },
       fontSize: {
         'text-32': '32px',
-        'text-22': '22px'
+        'text-22': '22px',
       },
       fontFamily: {
         sans: ['Nunito Sans', 'sans-serif'],
+        // Bricolage Grotesque has no Cyrillic glyphs; Onest covers them for the Russian locale.
+        display: [
+          'Bricolage Grotesque Variable',
+          'Onest Variable',
+          'Nunito Sans',
+          'sans-serif',
+        ],
       },
     },
   },

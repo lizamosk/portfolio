@@ -6,6 +6,9 @@ defineProps<{
   textarea?: boolean
   modelValue?: string
   name?: string
+  invalid?: boolean
+  describedby?: string
+  autocomplete?: string
 }>()
 
 const emit = defineEmits(['update:modelValue', 'blur'])
@@ -21,7 +24,7 @@ const onBlur = (e: Event) => {
 </script>
 
 <template>
-  <label>
+  <label class="text-strong font-semibold">
     {{ label }}
     <textarea
       v-if="textarea"
@@ -29,7 +32,10 @@ const onBlur = (e: Event) => {
       :placeholder="placeholder"
       :rows="3"
       :value="modelValue"
-      class="BasicInput p-3 flex flex-col rounded-md"
+      :aria-describedby="describedby"
+      :aria-invalid="invalid || undefined"
+      :autocomplete="autocomplete"
+      class="BasicInput p-3 flex flex-col rounded-md font-normal"
       @blur="onBlur"
       @input="onInput"
     />
@@ -39,7 +45,10 @@ const onBlur = (e: Event) => {
       :placeholder="placeholder"
       :type="type || 'text'"
       :value="modelValue"
-      class="BasicInput px-2 flex flex-col rounded-md"
+      :aria-describedby="describedby"
+      :aria-invalid="invalid || undefined"
+      :autocomplete="autocomplete"
+      class="BasicInput px-2 flex flex-col rounded-md font-normal"
       @blur="onBlur"
       @input="onInput"
     />

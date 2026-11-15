@@ -59,8 +59,10 @@ const navigationIcons = computed(() => {
 <template>
   <section
     ref="slides"
+    :aria-label="$t('a11y.slides_region')"
     :class="[direction === 'horizontal' ? 'snap-x' : 'snap-y flex-col']"
     class="snap-mandatory flex scroll-smooth overflow-auto Slides"
+    tabindex="0"
   >
     <div
       v-for="(slide, i) in slides"
@@ -74,14 +76,15 @@ const navigationIcons = computed(() => {
       class="Slide__container snap-center flex"
     >
       <div :class="isVertical ? 'flex-col' : 'flex-row'" class="Slide__frame flex w-full">
-        <component
-          :is="navigationIcons.iconPrevious"
+        <button
           v-if="i > 0"
+          :aria-label="$t('a11y.previous_slide')"
           class="w-8 h-8 icon primary"
           :class="[
             activeSlideIndex !== i ? 'invisible pointer-events-none' : '',
             isVertical ? 'mb-3' : 'mr-3',
           ]"
+          type="button"
           @click="
             () => {
               if (activeSlideIndex === i) {
@@ -89,21 +92,24 @@ const navigationIcons = computed(() => {
               }
             }
           "
-        ></component>
+        >
+          <component :is="navigationIcons.iconPrevious" aria-hidden="true" class="w-full h-full" />
+        </button>
         <component
           :is="slideComponent"
           :class="isVertical ? 'Slide--vertical' : 'Slide--horizontal'"
           v-bind="slide"
         >
         </component>
-        <component
-          :is="navigationIcons.iconNext"
+        <button
           v-if="i < slides.length - 1"
+          :aria-label="$t('a11y.next_slide')"
           class="w-8 h-8 icon primary"
           :class="[
             activeSlideIndex !== i ? 'invisible pointer-events-none' : '',
             isVertical ? 'mt-3' : 'mr-3',
           ]"
+          type="button"
           @click="
             () => {
               if (activeSlideIndex === i) {
@@ -111,7 +117,9 @@ const navigationIcons = computed(() => {
               }
             }
           "
-        ></component>
+        >
+          <component :is="navigationIcons.iconNext" aria-hidden="true" class="w-full h-full" />
+        </button>
       </div>
     </div>
   </section>

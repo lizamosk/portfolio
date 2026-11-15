@@ -9,7 +9,7 @@ const currentYear = new Date().getFullYear()
 
 <template>
   <footer
-    class="footer-touch-safe-bottom text-white w-full grid-rows-[1fr_auto] bg-dust-blue grid grid-cols-3 align-baseline justify-between pb-4 pt-8 px-8 lg:px-20 xl:px-24"
+    class="footer-touch-safe-bottom text-on-footer w-full grid-rows-[1fr_auto] bg-site-footer grid grid-cols-3 align-baseline justify-between pb-4 pt-8 px-8 lg:px-20 xl:px-24"
   >
     <div class="flex flex-col gap-2">
       <p class="flex">{{ $t('footer.made_by_liza') }} &#129653;</p>

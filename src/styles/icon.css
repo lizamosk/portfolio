@@ -2,14 +2,14 @@
   cursor: pointer;
 
   &.primary {
-    color: var(--sky-blue-darker);
+    color: var(--accent);
 
     &:hover {
-      color: var(--dust-blue);
+      color: var(--accent-hover);
     }
 
     &:active {
-      color: var(--brand-blue);
+      color: var(--accent-solid-active);
     }
   }
 }

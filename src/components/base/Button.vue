@@ -33,14 +33,15 @@ const isSecondary = computed(() => props.type === 'outlined')
   <button
     :class="[
       isPrimary &&
-        'border-transparent outline-none text-white has-background-brand-blue hover:bg-brand-blue-2 ' +
-          'focus:bg-primary-dark',
+        'bg-accent-solid border-accent-solid text-on-accent hover:bg-accent-solid-hover ' +
+          'hover:border-accent-solid-hover active:bg-accent-solid-active active:border-accent-solid-active',
       isSecondary &&
-        'bg-white has-text-brand-blue hover:bg-neutral-base focus:bg-neutral-base-darker',
+        'bg-transparent border-accent text-accent hover:bg-tint hover:border-accent-hover ' +
+          'hover:text-accent-hover active:bg-tint',
     ]"
     :disabled="disabled || loading"
     :type="nativeType"
-    class="inline-flex relative items-center justify-center rounded-lg px-10 max-h-fit py-2 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-s border-4 border-brand-blue"
+    class="inline-flex relative items-center justify-center rounded-[10px] px-10 min-h-11 max-h-fit py-2 font-semibold disabled:opacity-50 disabled:cursor-not-allowed border-2 transition-colors duration-200"
   >
     <div v-if="shine" class="absolute left-4">
       <GlitterIcon class="svg--shine" />

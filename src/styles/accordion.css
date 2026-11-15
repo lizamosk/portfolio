@@ -1,9 +1,14 @@
 /* styles.css */
 
 .AccordionItem {
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+
+  /* the item clips overflow, so draw the focus ring inside the trigger */
+  [data-radix-vue-collection-item]:focus-visible {
+    outline-offset: -4px;
+  }
 
   .AccordionChevron {
     transition: transform 300ms;

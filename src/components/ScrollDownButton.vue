@@ -11,7 +11,10 @@ import { scrollToNextPage } from '@/util/scroll'
       title="Scroll to Next"
       @click="scrollToNextPage"
     >
-      <ScrollDownButtonIcon class="bounce-out-down fixed bottom-10" />
+      <ScrollDownButtonIcon
+        aria-hidden="true"
+        class="bounce-out-down fixed bottom-10 text-accent"
+      />
     </button>
   </div>
 </template>

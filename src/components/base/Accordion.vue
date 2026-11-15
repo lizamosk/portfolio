@@ -19,10 +19,10 @@ const activeItem = ref()
       class="overflow-hidden focus-within:relative rounded-2xl isolate AccordionItem"
       value="1"
     >
-      <AccordionHeader as="div" class="flex flex-col bg-neutral-base pb-6">
+      <AccordionHeader as="div" class="flex flex-col bg-surface pb-6">
         <slot name="trigger" />
         <AccordionTrigger
-          class="flex flex-col cursor-default items-center justify-between px-5 outline-none group"
+          class="flex flex-col cursor-default items-center justify-between px-5 group"
         >
           <span
             v-if="activeItem === '1'"
@@ -37,14 +37,15 @@ const activeItem = ref()
       </AccordionHeader>
 
       <AccordionContent class="AccordionContent">
-        <div class="px-5 py-4 bg-white flex flex-col">
+        <div class="px-5 py-4 bg-surface border-t border-line flex flex-col">
           <slot name="content" />
-          <a
-            class="block mx-auto underline cursor-pointer ActionLink"
+          <button
+            class="block mx-auto cursor-pointer ActionLink"
+            type="button"
             @click="activeItem = undefined"
           >
             {{ $t('accordion.less_info') }}
-          </a>
+          </button>
         </div>
       </AccordionContent>
     </AccordionItem>
