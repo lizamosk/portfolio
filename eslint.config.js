@@ -7,7 +7,7 @@ import globals from 'globals'
 export default defineConfigWithVueTs(
   {
     name: 'app/files-to-ignore',
-    ignores: ['dist/**', 'dist-ssr/**', 'coverage/**', 'public/**'],
+    ignores: ['dist/**', 'dist-ssr/**', '.nuxt/**', '.output/**', 'coverage/**', 'public/**'],
   },
 
   js.configs.recommended,
@@ -17,7 +17,7 @@ export default defineConfigWithVueTs(
   {
     // Base UI primitives (Button, Input, ...) are intentionally single-word
     name: 'app/base-components',
-    files: ['src/components/base/**/*.vue'],
+    files: ['app/components/base/**/*.vue'],
     rules: {
       'vue/multi-word-component-names': 'off',
     },
@@ -25,7 +25,7 @@ export default defineConfigWithVueTs(
 
   {
     name: 'app/node-config-files',
-    files: ['*.config.js', '.claude/hooks/**/*.mjs'],
+    files: ['*.config.{js,ts}', '.claude/hooks/**/*.mjs'],
     languageOptions: {
       globals: globals.node,
     },

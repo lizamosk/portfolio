@@ -3,10 +3,10 @@
 module.exports = {
   darkMode: ['selector', '[data-theme="dark"]'],
   plugins: [],
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ['./app/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      // All colours are semantic tokens defined in src/styles/vars/color.css
+      // All colours are semantic tokens defined in app/styles/vars/color.css
       // and swap automatically with the theme.
       colors: {
         page: 'var(--bg)',
